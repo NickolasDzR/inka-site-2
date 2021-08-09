@@ -1,0 +1,13 @@
+mixin social(value = false)
+    -
+        var
+                elem = value.elem
+    +b.soc(class=elem)
+        +e.UL.list
+            each val, i in value.iconsName
+                    +e.LI.item
+                        +e.A.link(href="#" target="_black")
+                            +icon({
+                                name: val,
+                                class: "soc__svg",
+                            })

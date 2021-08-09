@@ -1,0 +1,8 @@
+mixin nav(value = false)
+    +b.NAV.nav
+        +e.UL.list
+            each item, index in value.navigationListItems
+                - var anchor = "#" + item[1]
+                +e.LI.item
+                    +e.A.link(href=anchor) #{item[0]}
+

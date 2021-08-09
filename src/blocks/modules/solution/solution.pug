@@ -1,0 +1,28 @@
+mixin solution(value = false)
+    +b.SECTION.solution#solution
+        .container-fix
+            .row(style="position: relative;")
+                +e.H2.heading #{value.heading}
+                +e.UL.content
+                    each val, i in value.solutionContent
+                        - var className = `_${i}`
+                        +e.LI.item(class=className)
+                            +e.item-wrp
+                                +e.P.title #{val[0]}
+                                +e.P.text #{val[1]}
+                            if i === 3
+                                +e.IMG.img(class="lozad" data-src=`img/content/${val[2]}.webp` data-srcset=`img/content/${val[3]}.webp 2x` width="350" height="202")
+                            else
+                                +e.IMG.img(class="lozad" data-src=`img/content/${val[2]}.webp` data-srcset=`img/content/${val[3]}.webp 2x` width="350" height="267")
+                +e.fixed
+                    +e.fixed-items
+                        each val, i in value.solutionContent
+                            -
+                                var
+                                    className = `img-${i}`
+                                    width = `${val[4]}`
+                                    height = `${val[5]}`
+                            if i <= 1
+                                +e.IMG.img-fixed._big(data-marker-content=className src=`img/content/${val[2]}.webp` srcset=`img/content/${val[2]}.webp 2x` width=width height=height)
+                            else
+                                +e.IMG.img-fixed._small(data-marker-content=className src=`img/content/${val[2]}.webp` srcset=`img/content/${val[2]}.webp 2x` width=width height=height)

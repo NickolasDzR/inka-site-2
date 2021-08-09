@@ -1,0 +1,28 @@
+mixin steps(value = false)
+    +b.SECTION.steps#steps
+        .container
+            .row
+                +e.H2.heading #{value.heading}
+                +e.wrp
+                    +e.UL.list
+                        +e.LI.item
+                            +e.number
+                                +e.number-text-wrp
+                                    +e.number-text 1
+                            +e.SPAN.text Download Inka app<br> on App Store or Play Market
+                        +e.LI.item
+                            +e.number
+                                +e.number-text-wrp
+                                    +e.number-text 2
+                            +e.SPAN.text Start buying and exchanging<br> cryptocurrencies
+                        +e.LI.item
+                            +e.number
+                                +e.number-text-wrp
+                                    +e.number-text 3
+                            +e.SPAN.text Earn under 30% annually<br> by staking cryptocurrency
+                    +e.curve-wrp
+                        each val, i in value.imagesUrl
+                            if i === 1
+                                +e.IMG.curve_top(class="lozad" data-src=`img/content/curve-top.webp` data-srcset=`img/content/curve-top@x2.webp 2x` media="(min-width: 768px)")
+                            if i === 2
+                                +e.IMG.curve_bottom(class="lozad" data-src=`img/content/curve-bottom.webp` data-srcset=`img/content/curve-bottom@x2.webp 2x` media="(min-width: 768px)")

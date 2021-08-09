@@ -1,0 +1,28 @@
+mixin stats(value = false)
+    +b.SECTION.stats
+        .container
+            .row
+                +e.H2.heading #{value.heading}
+                +e.content-wrp
+                    +e.IMG.backdrop-mirror(src="img/content/mirror-circle.webp" width="36" height="36")
+                    +e.IMG.backdrop-mirror._top(src="img/content/mirror-circle.webp" width="36" height="36")
+                    +e.IMG.backdrop-mirror._top._shadow(src="img/content/mirror-circle-shadow.webp" width="36" height="36")
+                    +e.content(filter="svgBlur")
+                        +e.UL.list
+                            each val, index in value.content
+                                +e.LI.item(data-fill-percentage=val[2])
+                                    +e.text-wrp
+                                        +e.P.num #{val[0]}
+                                        +e.P.text #{val[1]}
+                                    +e.SVG.circle
+                                        +e.CIRCLE.circle-progress._path(cx="72" cy="72" r="67")
+                                        +e.CIRCLE.circle-progress._fill(cx="72" cy="72" r="66")
+                        +e.SVG.filter(xmlns="http://www.w3.org/2000/svg" width="200" height="200")
+                            filter(id="blur" width="160%" height="160%" x="-30%" y="-30%")
+                                feFlood(flood-color="#fff" result="neutral")
+                                feGaussianBlur(in="SourceGraphic" stdDeviation="10" result="blurred")
+                                feMerge
+                                    feMergeNode(in="neutral")
+                                    feMergeNode(in="blurred")
+                            +e.IMG.backdrop-circle(src="img/content/purple-circle.webp" style="filter: url(#blur)" width="200" height="200")
+                            +e.IMG.backdrop-circle._top(src="img/content/purple-circle.webp" style="filter: url(#blur)" width="200" height="200")

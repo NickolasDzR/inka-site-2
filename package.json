@@ -1,0 +1,47 @@
+{
+  "name": "laravel-mix-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production",
+    "sprite-production": "cross-env process.env.section=sprite NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "webp-production": "cross-env process.env.section=webp NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "@popperjs/core": "^2.9.3",
+    "autoprefixer": "^10.3.1",
+    "bemto.pug": "^2.1.0",
+    "browser-sync": "^2.27.5",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-mqpacker": "^7.0.0",
+    "gsap": "^3.7.1",
+    "imagemin-webp-webpack-plugin": "^3.3.6",
+    "laravel-mix": "^6.0.27",
+    "laravel-mix-copy-watched": "^2.3.1",
+    "laravel-mix-extract-media-queries": "^6.1.0",
+    "laravel-mix-pug": "^0.3.0",
+    "lozad": "^1.16.0",
+    "postcss": "^8.3.6",
+    "pug": "^3.0.2",
+    "sass": "^1.36.0",
+    "sass-loader": "^12.1.0",
+    "scroll-lock": "^2.1.5",
+    "smart-grid": "^2.1.2",
+    "svg-spritemap-webpack-plugin": "^4.1.0",
+    "tailwindcss": "^2.2.7",
+    "webpack-livereload-plugin": "^1.2.0"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

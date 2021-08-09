@@ -1,0 +1,161 @@
+$listItems: 4;
+$staticNavigationMediaBreak: $break_md;
+
+.nav {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: calc(100% + 30px);
+
+    height: 0;
+    overflow: hidden;
+    transition: all 700ms cubic-bezier(0.32, 0.08, 0.24, 1);
+    background-color: $white;
+    pointer-events: none;
+    @media (min-width: $break_md) {
+        flex-grow: 1;
+        position: static;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        opacity: 1;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    @media (min-width: $staticNavigationMediaBreak) {
+        animation: none;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    @media (min-width: $break_md) {
+        background-color: inherit;
+    }
+
+    &__img {
+        @include col();
+        @include size(12);
+        margin-bottom: 15px;
+        @media (min-width: $staticNavigationMediaBreak) {
+            flex-grow: 0;
+            width: auto;
+            margin-bottom: 0;
+        }
+    }
+
+    &__logo {
+        display: block;
+        max-width: 90px;
+        height: 32px;
+    }
+
+    &__list {
+        @include size(12);
+        margin-top: 80px;
+        @media (min-width: $break_md) {
+            margin: 0;
+            padding: 0;
+        }
+        @media (min-width: $staticNavigationMediaBreak) {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: flex-end;
+            width: auto;
+        }
+    }
+
+    &__item {
+        transform: translate3d(-10px, -50px, 0);
+        transition: all 400ms ease;
+        opacity: 0;
+        @media (min-width: $break_md) {
+            transform: translate3d(0, 0, 0);
+            margin-bottom: 0;
+            opacity: 1;
+            margin-top: 0;
+        }
+        &:nth-child(1) {
+            @media (min-width: $break_md) {
+                margin-top: 0;
+            }
+        }
+    }
+    &__item + &__item {
+        @media (min-width: $break_md) {
+            border: none;
+        }
+        @media (min-width: $staticNavigationMediaBreak) {
+            margin-left: 40px;
+        }
+        @media (min-width: $break_lg) {
+            margin-left: 60px;
+        }
+        @media (min-width: $break_xl) {
+            margin-left: 80px;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        width: 100%;
+        padding: 16px 36px;
+        transform: translateZ(-30px);
+        transition: transform 700ms ease, color .2s linear;
+        font-size: 18px;
+        color: #616161;
+        @media (min-width: $break_md) {
+            transform: translateZ(0);
+            padding: {
+                right: 15px;
+                left: 15px;
+            }
+        }
+        &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-180deg) translate3d(100%, 0, 0);
+            transition: transform .5s ease;
+            background: linear-gradient(100.72deg, rgba(196, 205, 255, 0) 5.58%, rgba(113, 113, 255, 0.5) 65.48%, #7171ff 95.26%);
+            @media (min-width: $break_md) {
+                display: none;
+            }
+        }
+        &:hover {
+            @media (min-width: $break_md) {
+                color: $font-black;
+            }
+            color: $white;
+            &:before {
+                transform: rotate(-180deg) translate3d(0, 0, 0);
+            }
+        }
+    }
+    &_active {
+        height: 100vh;
+        visibility: visible;
+        pointer-events: auto;
+        .nav__item {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+    @for $i from 1 through $listItems {
+        &__item:nth-child(#{$i}) {
+            transition-delay: #{$i*20}ms;
+        }
+    }
+}

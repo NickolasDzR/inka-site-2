@@ -1,0 +1,407 @@
+.slider {
+    padding: 100px 0;
+    @media (min-width: $break_lg) {
+        padding-top: 136px;
+        padding-bottom: 136px;
+    }
+
+    .glide__slide {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .6s linear, visibility .6s linear;
+    }
+
+    .glide__slide--active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .slider__logo-small {
+        width: 60px;
+        height: 72px;
+        @media (min-width: $break_xl) {
+            width: 106px;
+            height: 126px;
+        }
+    }
+
+    &__slider-controller {
+        @include col();
+        @include size(12);
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        @media (min-width: $break_xl) {
+            width: 426px;
+        }
+        @media (min-width: $break_md) {
+            width: 320px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__slider-controller-wrp {
+        position: relative;
+        width: 290px;
+        min-width: 290px;
+        max-width: 290px;
+        max-width: 100%;
+        height: 290px;
+        @media (min-width: $break_xl) {
+            width: 426px;
+            min-width: 426px;
+            max-width: 426px;
+            height: 426px;
+        }
+    }
+
+    &__slides {
+        margin-bottom: 48px;
+        @include col();
+        @include size(12);
+        @media (min-width: $break_xl) {
+            width: calc(100% - 456px);
+            max-width: 600px;
+        }
+        @media (min-width: $break_sm) {
+        //    display: flex;
+        //    flex-wrap: wrap;
+        //    align-content: center;
+        //    justify-content: flex-start;
+        //    width: calc(100% - 380px);
+        //    max-width: 410px;
+        //    margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @media (min-width: $break_sm) {
+            @include size(6);
+            margin-bottom: 0;
+        }
+    }
+    &__slides-wrp {
+        transition: height .3s linear;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 0;
+        font-size: 28px;
+        font-weight: bold;
+        color: $font-black;
+        margin-bottom: 28px;
+        @media (min-width: $break_xl) {
+            margin-bottom: 28px;
+        }
+        @media (min-width: $break_lg) {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__subtitle {
+        margin: 0;
+        padding: 0;
+        color: $font-black;
+        line-height: 24px;
+        @media (min-width: $break_lg) {
+            font-size: 24px;
+            line-height: 36px;
+        }
+    }
+
+    &__slider-controller-wrp {
+        & > div {
+            position: absolute;
+            transition: transform .15s ease;
+        }
+
+        & > div > picture {
+            display: block;
+            width: 100%;
+        }
+
+        & > div:nth-child(1) {
+            top: 25px;
+            right: 41px;
+            @media (min-width: $break_xl) {
+                top: 0;
+                right: 27px;
+            }
+
+            &.slider__slider-controller-btn_active {
+                transform: translate3d(5px, -9px, 0);
+                @media (min-width: $break_xl) {
+                    transform: translate3d(10px, -16px, 0);
+                }
+            }
+        }
+
+        & > div:nth-child(2) {
+            top: 84px;
+            right: 24px;
+            @media (min-width: $break_xl) {
+                top: 106px;
+                right: -1px;
+            }
+
+            &.slider__slider-controller-btn_active {
+                transform: translate3d(10px, 0, 0);
+                @media (min-width: $break_xl) {
+                    transform: translate3d(20px, 0, 0);
+                }
+            }
+        }
+
+        & > div:nth-child(3) {
+            right: 41px;
+            bottom: 20px;
+            @media (min-width: $break_xl) {
+                right: 27px;
+                bottom: -4px;
+            }
+
+            &.slider__slider-controller-btn_active {
+                transform: translate3d(6px, 8px, 0);
+                @media (min-width: $break_xl) {
+                    transform: translate3d(10px, 17px, 0);
+                }
+            }
+        }
+
+        & > div:nth-child(4) {
+            right: 145px;
+            bottom: 20px;
+            @media (min-width: $break_xl) {
+                right: 212px;
+                bottom: -5px;
+            }
+
+            &.slider__slider-controller-btn_active {
+                transform: translate3d(-5px, 9px, 0);
+                @media (min-width: $break_xl) {
+                    transform: translate3d(-10px, 17px, 0);
+                }
+            }
+        }
+
+        & > div:nth-child(5) {
+            top: 84px;
+            left: 25px;
+            @media (min-width: $break_xl) {
+                top: 107px;
+                left: 0;
+            }
+
+            &.slider__slider-controller-btn_active {
+                transform: translate3d(-10px, 0, 0);
+                @media (min-width: $break_xl) {
+                    transform: translate3d(-21px, 0, 0);
+                }
+            }
+        }
+
+        & > div:nth-child(6) {
+            top: 25px;
+            left: 41px;
+            @media (min-width: $break_xl) {
+                top: 0;
+                left: 28px;
+            }
+
+            &.slider__slider-controller-btn_active {
+                transform: translate3d(-5px, -9px, 0);
+                @media (min-width: $break_xl) {
+                    transform: translate3d(-11px, -17px, 0);
+                }
+            }
+        }
+
+        & > div > picture img, & > div > svg:not(.slider__slide-icon) {
+            width: 104px;
+            @media (min-width: $break_xl) {
+                width: 185px;
+            }
+        }
+
+        & > div:nth-child(2) > picture img, & > div:nth-child(2) > svg:not(.slider__slide-icon) {
+            width: 59px;
+            @media (min-width: $break_xl) {
+                width: 103px;
+            }
+        }
+
+        & > div:nth-child(5) > picture img, & > div:nth-child(5) > svg:not(.slider__slide-icon) {
+            width: 59px;
+            @media (min-width: $break_xl) {
+                width: 103px;
+            }
+        }
+    }
+
+    &__slide-icon {
+        position: absolute;
+        fill: $white;
+        &_one {
+            top: 23px;
+            right: 44px;
+            width: 20px;
+            height: 25px;
+            @media (min-width: $break_xl) {
+                top: 41px;
+                right: 84px;
+                width: 33px;
+                height: 34px;
+            }
+        }
+        &_two {
+            top: 49px;
+            right: 11px;
+            width: 20px;
+            height: 25px;
+            @media (min-width: $break_xl) {
+                top: 89px;
+                right: 20px;
+                width: 35px;
+                height: 35px;
+            }
+        }
+        &_three {
+            top: 36px;
+            right: 42px;
+            width: 25px;
+            height: 25px;
+            @media (min-width: $break_xl) {
+                top: 68px;
+                right: 73px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+        &_four {
+            top: 36px;
+            right: 42px;
+            width: 25px;
+            height: 25px;
+            @media (min-width: $break_xl) {
+                top: 67px;
+                right: 75px;
+                width: 38px;
+                height: 38px;
+            }
+        }
+        &_five {
+            top: 49px;
+            left: 9px;
+            width: 23px;
+            height: 26px;
+            @media (min-width: $break_xl) {
+                top: 89px;
+                left: 16px;
+                width: 38px;
+                height: 38px;
+            }
+        }
+        &_six {
+            top: 23px;
+            left: 44px;
+            width: 20px;
+            height: 25px;
+            @media (min-width: $break_xl) {
+                top: 45px;
+                left: 73px;
+                width: 34px;
+                height: 34px;
+            }
+        }
+    }
+
+    &__slider-controller-wrp {
+        cursor: pointer;
+    }
+
+    &__slider-controller-circle {
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        right: 50%;
+        bottom: 50%;
+        left: 50%;
+        width: 164px;
+        height: 164px;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        @media (min-width: $break_xl) {
+            width: 292px;
+            height: 292px;
+        }
+    }
+
+    &__slide-svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        @media (min-width: $break_lg) {
+            width: 36px;
+            height: 36px;
+            margin-right: 16px;
+        }
+    }
+
+    &__sign {
+        margin: 0;
+        padding: 0;
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 20px;
+        @media (min-width: $break_xl) {
+            margin-bottom: 56px;
+        }
+        @media (min-width: $break_lg) {
+            font-size: 24px;
+            margin-bottom: 36px;
+        }
+    }
+
+    &__slider-cotroller-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    &__custom-bullet {
+        background-color: $gray;
+        box-shadow: none;
+        &:hover, &:focus {
+            background-color: $gray;
+            border: none;
+        }
+    }
+
+    &__custom-bullets {
+        position: relative;
+        bottom: auto;
+        @media (min-width: $break_sm) {
+            left: auto;
+            transform: translateX(0);
+        }
+    }
+    .glide__bullet--active {
+        background-color: $blue;
+    }
+
+    &__cryptocurrencies {
+        @media (min-width: $break_sm) {
+            @include col();
+            @include size(6);
+        }
+    }
+}

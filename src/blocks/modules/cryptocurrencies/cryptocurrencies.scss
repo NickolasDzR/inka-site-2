@@ -1,0 +1,356 @@
+.cryptocurrencies {
+    width: 100%;
+    order: 1;
+    @media (min-width: $break_sm) {
+        order: 0;
+    }
+
+    &__heading {
+        @include col();
+        @include size(12);
+        margin-bottom: 30px;
+        color: $font-black;
+    }
+
+    &__list-cryptos {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__list {
+        @include col();
+        @include size(12);
+        padding-left: 33px;
+        @media (min-width: $break_md) {
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 125px;
+        }
+        @media (min-width: $break_lg) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item {
+        position: relative;
+        list-style: none;
+        font-size: 16px;
+        line-height: 24px;
+        @media (min-width: $break_md) {
+            font-size: 24px;
+            line-height: 32px;
+        }
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            left: -20px;
+            width: 5px;
+            height: 5px;
+            transform: translateY(-50%);
+            background-color: $font-black;
+            border-radius: 50%;
+        }
+    }
+
+    &__controll {
+        @include col();
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 273px;
+        height: 273px;
+        margin: 0 auto;
+        @media (min-width: $break_lg) {
+            width: 475px;
+            height: 475px;
+            margin: 0 auto;
+        }
+    }
+
+    &__text {
+        margin-bottom: 30px;
+    }
+
+    &__circle {
+        position: relative;
+        width: 100%;
+        max-width: 273px;
+        height: 100%;
+        max-height: 273px;
+        @media (min-width: $break_lg) {
+            max-width: 475px;
+            max-height: 475px;
+        }
+        animation: {
+            name: cryptorotate;
+            timing-function: linear;
+            iteration-count: infinite;
+        }
+    }
+
+    &__circle-wrp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__circle-inner {
+        z-index: 1;
+        width: 110px;
+        height: 110px;
+        transition: transform .3s linear;
+        background: #ffffff;
+        box-shadow: -5px -5px 20px #ffffff, 5px 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        cursor: pointer;
+        @media (min-width: $break_lg) {
+            width: 188px;
+            height: 188px;
+        }
+
+        &_scale {
+            transform: scale(1.15);
+        }
+    }
+
+    &__circle-cover {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+
+        animation: {
+            name: cryptorotate;
+            timing-function: linear;
+            iteration-count: infinite;
+            direction: reverse;
+        }
+    }
+
+    &__cryptos {
+        width: 15px;
+        height: 15px;
+        @media (min-width: $break_lg) {
+            width: 32px;
+            height: 32px;
+        }
+
+        animation: {
+            name: cryptorotate;
+            timing-function: linear;
+            iteration-count: infinite;
+            direction: reverse;
+        }
+    }
+
+    &__logo-small {
+        display: block;
+        width: 50px;
+        height: 61px;
+        @media (min-width: $break_lg) {
+            width: 80px;
+            height: 95px;
+        }
+    }
+
+    &__item-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        transition: transform .5s ease;
+        background: #ffffff;
+        box-shadow: -5px -5px 20px #ffffff, 5px 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        @media (min-width: $break_lg) {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    &__item-img_1 {
+        top: 5px;
+        left: 115px;
+        @media (min-width: $break_lg) {
+            top: 10px;
+            left: 195px;
+            &_transform {
+                transform: translate3d(0, 200px, 0);
+            }
+        }
+
+        &_transform {
+            transform: translate3d(0, 110px, 0);
+        }
+    }
+
+    &__item-img_2 {
+        top: 35px;
+        left: 179px;
+        @media (min-width: $break_lg) {
+            top: 35px;
+            left: 319px;
+            &_transform {
+                transform: translate3d(-125px, 170px, 0);
+            }
+        }
+
+        &_transform {
+            transform: translate3d(-65px, 80px, 0);
+        }
+    }
+
+    &__item-img_3 {
+        top: 87px;
+        left: 212px;
+        @media (min-width: $break_lg) {
+            top: 137px;
+            left: 379px;
+            &_transform {
+                transform: translate3d(-178px, 67px, 0);
+            }
+        }
+
+        &_transform {
+            transform: translate3d(-98px, 27px, 0);
+        }
+    }
+
+    &__item-img_4 {
+        top: 147px;
+        left: 212px;
+        @media (min-width: $break_lg) {
+            top: 257px;
+            left: 392px;
+            &_transform {
+                transform: translate3d(-195px, -52px, 0);
+            }
+        }
+
+        &_transform {
+            transform: translate3d(-99px, -32px, 0);
+        }
+    }
+
+    &__item-img_5 {
+        bottom: 35px;
+        left: 179px;
+        @media (min-width: $break_lg) {
+            bottom: 41px;
+            left: 320px;
+            &_transform {
+                transform: translate3d(-122px, -148px, 0);
+            }
+        }
+
+        &_transform {
+            transform: translate3d(-65px, -80px, 0);
+        }
+    }
+
+    &__item-img_6 {
+        bottom: 5px;
+        left: 115px;
+        @media (min-width: $break_lg) {
+            bottom: 11px;
+            left: 198px;
+            &_transform {
+                transform: translate3d(0, -180px, 0);
+            }
+        }
+
+        &_transform {
+            transform: translate3d(0, -110px, 0);
+        }
+    }
+
+    &__item-img_7 {
+        right: 179px;
+        bottom: 35px;
+        @media (min-width: $break_lg) {
+            right: 329px;
+            bottom: 55px;
+            &_transform {
+                transform: translate3d(135px, -130px, 0);
+            }
+        }
+
+        &_transform {
+            transform: translate3d(65px, -80px, 0);
+        }
+    }
+
+    &__item-img_8 {
+        top: 147px;
+        right: 212px;
+        @media (min-width: $break_lg) {
+            top: 237px;
+            right: 388px;
+            &_transform {
+                transform: translate3d(190px, -28px, 0);
+            }
+        }
+
+        &_transform {
+            transform: translate3d(97px, -34px, 0);
+        }
+    }
+
+    &__item-img_9 {
+        top: 87px;
+        right: 212px;
+        @media (min-width: $break_lg) {
+            top: 127px;
+            right: 376px;
+            &_transform {
+                transform: translate3d(177px, 80px, 0);
+            }
+        }
+
+        &_transform {
+            transform: translate3d(100px, 28px, 0);
+        }
+    }
+
+    &__item-img_10 {
+        top: 35px;
+        right: 179px;
+        @media (min-width: $break_lg) {
+            top: 37px;
+            right: 313px;
+            &_transform {
+                transform: translate3d(115px, 168px, 0);
+            }
+        }
+
+        &_transform {
+            transform: translate3d(65px, 78px, 0);
+        }
+    }
+}
+
+@keyframes cryptorotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

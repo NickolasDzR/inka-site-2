@@ -1,0 +1,42 @@
+.copyright {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &__logo {
+        @media (min-width: $break_md) {
+            width: 90px;
+            height: 32px;
+        }
+        width: 100px;
+        height: 40px;
+    }
+    &__logo-wrp {
+        @media (min-width: $break_md) {
+            flex: 0;
+            justify-content: start;
+            align-items: flex-end;
+            margin: 0;
+        }
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    &__text {
+        @media (min-width: $break_md) {
+            text-align: right;
+        }
+        width: 100%;
+        color: $white;
+        text-align: center;
+    }
+    &__content {
+        @media (min-width: $break_md) {
+            font-size: 24px;
+            line-height: 22px;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}

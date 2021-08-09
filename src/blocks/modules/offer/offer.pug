@@ -1,0 +1,30 @@
+mixin offer(value = false)
+    +b.SECTION.offer#offer
+        +e.wrp
+            .container
+                .row
+                    +e.UL.content
+                        +e.LI.item._flex._md_mb-45
+                            +e.logo-wrp
+                                +e.logo
+                                    +icon({
+                                        name: "logo-label",
+                                        class: "offer__svg"
+                                    })
+                            +e.text
+                                +e.P.title Try Inka
+                                +e.P.subtitle Ready to explore Inka?
+                        +e.LI.item
+                            +e.A.app-store-link(href="https://apps.apple.com/ru/app/яндекс-карты/id313877526" target="_blank")
+                                +b.IMG.app-store-img(class="offer__app-store-img" class="lozad" data-src=`img/content/app-store.webp` data-srcset=`img/content/app-store@x2.webp 2x` height="40" width="115")
+                        +e.LI.item
+                            +e.A.app-store-link(href="https://play.google.com/store/apps/details?id=ru.yandex.yandexmaps" target="_blank")
+                                +b.IMG.app-store-img(class="offer__app-store-img" class="lozad" data-src=`img/content/google-play.webp` data-srcset=`img/content/google-play@x2.webp 2x` height="40" width="115")
+                        +e.LI.item
+                            +e.app-store-link
+                                +e.app-store-link-wrp
+                                    +icon({
+                                        name: "qr-code",
+                                        class: "offer__qr-code qr-code"
+                                    })
+                    +e.IMG.phone(class="lozad" data-src=`img/content/iphone.webp` data-srcset=`img/content/iphone@x2.webp 2x` width="148" height="300" alt="Картинка приложения inka")

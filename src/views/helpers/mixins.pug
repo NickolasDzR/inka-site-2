@@ -1,0 +1,52 @@
+mixin icon(value = false)
+    -
+        const
+            modifier = value.modifier ? value.class + '_' + value.name : ''
+            image = value.alt ? value.alt : false
+            height = value.height ? value.height : ""
+            width = value.width ? value.width : ""
+    if value.path
+        img(class= value.class, class=modifier, src=`img/svg/${value.name}.svg` width=width height=height)
+    else
+        svg(class= value.class, class=modifier, viewbox=value.viewbox role=image ? "img" : image, aria-label=image)
+            use(xlink:href=`img/sprites/sprite.svg#${value.name}`)
+
+mixin picture(value = false)
+    -
+        const
+                imgClass = value.class ? value.class : false
+        const
+                sm = value.sm ? value.sm : false;
+        const
+                lg = value.lg ? value.lg : false;
+    picture
+        if lg
+            source(srcset=`img/webp/${value.name}.webp 1x,
+                img/webp/${value.name}@x2.webp 2x`
+                media="(min-width: 768px)"
+                type="image/webp"
+            )
+            source(srcset=`img/content/${value.name}.${value.format} 1x,
+                img/content/${value.name}@x2.${value.format} 2x`
+                media="(min-width: 768px)"
+            )
+        if sm
+            source(srcset=`img/webp/${value.name}.webp 1x,
+                img/webp/${value.name}@x2.webp 2x`
+                media="(min-width: 568px)"
+                type="image/webp"
+            )
+            source(srcset=`img/content/${value.name}.${value.format} 1x,
+                img/content/${value.name}@x2.${value.format} 2x`
+                media="(min-width: 568px)"
+            )
+        source(srcset=`img/content/${value.name}.webp 1x,
+                img/content/${value.name}@x2.webp 2x`
+            type="image/webp"
+        )
+        +e.IMG(class=imgClass
+            srcset=`img/content/${value.name}@x2.${value.format} 2x`
+            src=`img/content/${value.name}.${value.format}`
+            alt=value.alt
+            data=value.data
+        )

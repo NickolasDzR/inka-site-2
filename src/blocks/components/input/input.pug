@@ -1,0 +1,7 @@
+mixin input(value = false)
+    include ../btn/btn
+    -
+        var
+                mod = value.modification ? "_" + value.modification : ""
+    +b.input(class=mod)
+        +e.INPUT.input(placeholder=value.placeholder, type=value.type required data-type=value.dataType)

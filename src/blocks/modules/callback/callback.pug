@@ -1,0 +1,20 @@
+mixin callback(value = false)
+    include ../../components/input/input
+    include ../../components/btn/btn
+    -
+        var
+                elem = value.elem
+    +b.callback(class=elem)
+        +e.FORM.form(data-error="Ошибка отправки данных, попробуйте перезагрузить страницу")
+            each val, i in value.content
+                +input({
+                    placeholder: val[0],
+                    type: val[1],
+                    btnText: value.btnText,
+                    modification: "callback",
+                    dataType: val[2],
+                })
+            +btn({
+                text: value.btnText,
+                elem: "callback__btn"
+            })

@@ -1,0 +1,26 @@
+mixin slider(value = false)
+    +b.SECTION.slider
+        .container
+            .row
+                +cryptocurrencies({
+                    heading: "In one click choose the best:",
+                    list: cryptocurrenciesList,
+                    cryptos: 10,
+                    elem: "__cryptocurrencies"
+                })
+                +e.slides.glide
+                    +e.P.sign
+                        +icon({
+                            name: "stats",
+                            class: "slider__slide-svg"
+                        })
+                        | Inka. Benefits
+                    +e.slides-wrp(data-glide-el="track" data-autoplay-speed="4" class="glide__track")
+                        +e.UL.items.glide__slides
+                            each val, index in value.slides
+                                +e.LI.item.glide__slide
+                                    +e.P.title #{val[0]}
+                                    +e.P.subtitle #{val[1]}
+                    +e.custom-bullets(class="slider__bullets glide__bullets" data-glide-el="controls[nav]")
+                        each val, index in value.slides
+                            +e.custom-bullet(class="slider__bullet glide__bullet" data-glide-dir="=" + index + "")

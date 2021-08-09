@@ -1,0 +1,96 @@
+.title {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    @media (min-width: $break_md) {
+        padding-top: 170px;
+        padding-bottom: 130px;
+    }
+    @media (min-width: $break_xl) {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    &__content {
+        @include col();
+        @include size(12);
+        display: flex;
+        flex-direction: column;
+        @media (min-width: $break_md) {
+            width: 450px;
+        }
+        @media (min-width: $break_lg) {
+            width: 620px;
+        }
+    }
+
+    &__img-title {
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 45px;
+        @media (min-width: $break_sm) {
+            margin-bottom: 70px;
+        }
+        @media (min-width: $break_md) {
+            display: none;
+        }
+    }
+
+    &__img {
+        display: none;
+        width: calc(100% - 480px);
+        @media (min-width: $break_md) {
+            display: block;
+        }
+        @media (min-width: $break_lg) {
+            width: calc(100% - 650px);
+        }
+    }
+
+    &__row {
+        @media (min-width: $break_md) {
+            align-items: center;
+        }
+    }
+
+    &__heading {
+        font-weight: 700;
+        font-size: 36px;
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+        @media (min-width: $break_lg) {
+            text-align: left;
+            font-size: 42px;
+            margin-bottom: 24px;
+        }
+        @media (min-width: $break_xl) {
+            margin-bottom: 64px;
+            font-size: 48px;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 300;
+        color: $font-black;
+        text-align: center;
+        @media (min-width: $break_md) {
+            text-align: left;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        @media (min-width: $break_xl) {
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        br {
+            display: none;
+            @media (min-width: $break_lg) {
+                display: block;
+            }
+        }
+    }
+
+}

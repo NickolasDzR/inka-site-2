@@ -1,0 +1,12 @@
+mixin support(value = false)
+    +b.SECTION.support
+        .container
+            .row
+                +e.H2.heading #{value.heading}
+                +e.UL.list
+                    each val in value.list
+                        +e.LI.item
+                            +icon({
+                                name: val,
+                                class: "support__img"
+                            })

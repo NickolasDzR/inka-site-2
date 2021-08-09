@@ -1,0 +1,17 @@
+mixin cryptocurrencies(value = false)
+    +b.SECTION.cryptocurrencies(class=value.elem)
+        +e.controll(data-animation-time="10", data-animation-hide-crypto="2")
+            +e.circle
+                - var i = 1
+                +e.UL.list-cryptos
+                    while i <= 10
+                        - var imageUrl = "img/svg/crypto-" + i +".svg"
+                        - var className = "_" + i
+                        - i++
+                        +e.item-img(class=className)
+                            +e.IMG.cryptos.lozad(data-src=imageUrl)
+                +e.circle-wrp
+                    +e.circle-inner
+                        +e.circle-cover
+                            +e.IMG.logo-small(class="lozad" data-src=`img/svg/logo-small.svg` media="(min-width: 768px)")
+

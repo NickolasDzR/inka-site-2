@@ -1,0 +1,23 @@
+.callback {
+    @media (min-width: $break_md) {
+        max-width: 721px;
+        margin-bottom: 48px;
+    }
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    &__form {
+        @media (min-width: $break_md) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__btn {
+        @media (min-width: $break_md) {
+            max-width: 137px;
+            height: 44px;
+        }
+    }
+}

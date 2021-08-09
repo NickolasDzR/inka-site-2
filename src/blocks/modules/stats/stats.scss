@@ -1,0 +1,216 @@
+.stats {
+    &__content-wrp {
+        position: relative;
+        @include col();
+        @include size(12);
+        &::before, &::after {
+            content: "";
+            display: block;
+            background: linear-gradient(100.72deg, #EEC9E9 5.58%, #9E71FF 54.44%, #1C1C9D 95.26%);
+            width: 92px;
+            height: 92px;
+            border-radius: 50%;
+            z-index: -2;
+            position: absolute;
+
+        }
+        &::before {
+            bottom: -40px;
+            left: -30px;
+            @media (min-width: $break_sm) {
+                bottom: -70px;
+                left: 100px;
+            }
+        }
+        &::after {
+            top: 30%;
+            right: -30px;
+            @media (min-width: $break_sm) {
+                top: -7%;
+                right: 10px;
+            }
+        }
+    }
+    &__content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding: 55px 0;
+        background: rgba(234, 234, 234, 0.5);
+        border-radius: 16px;
+        overflow: hidden;
+        @media (min-width: $break_sm) {
+            padding: 75px 0 27px;
+        }
+        @media (min-width: $break_lg) {
+            padding: 105px 0 27px;
+        }
+    }
+
+    &__heading {
+        font-weight: 500;
+        font-size: 36px;
+        color: $font-black;
+        width: 100%;
+
+        margin-bottom: -20px;
+        z-index: 1;
+
+        @media (min-width: $break_lg) {
+            font-size: 48px;
+            line-height: 72px;
+            margin-bottom: -60px;
+        }
+    }
+
+    &__circle {
+        width: 142px;
+        height: 142px;
+        transform: rotate(-90deg);
+
+        @media (min-width: $break_lg) {
+            width: 210px;
+            height: 210px;
+        }
+        &-progress {
+            fill: none;
+            stroke-width: 6;
+            stroke-opacity: 1;
+            stroke-linecap: butt;
+            stroke: $melrose;
+            @media (min-width: $break_lg) {
+                r: 100;
+                cx: 105;
+                cy: 105;
+            }
+
+            &_path {
+                stroke: $white;
+            }
+
+            &_fill {
+                stroke-width: 8;
+                stroke-opacity: 1;
+                transition: stroke-dashoffset 1s ease-out;
+                stroke-dasharray: 486;
+                stroke-dashoffset: 486;
+                @media (min-width: $break_lg) {
+                    stroke-dasharray: 628;
+                    stroke-dashoffset: 628;
+                }
+            }
+        }
+    }
+
+    &__list {
+        max-width: 900px;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media (min-width: $break_sm) {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        @media (min-width: $break_lg) {
+            max-width: 1040px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 28px;
+    }
+
+    &__text-wrp {
+        position: absolute;
+        max-width: 90px;
+        @media (min-width: $break_lg) {
+            max-width: 145px;
+        }
+    }
+
+    &__num {
+        font-weight: 500;
+        font-size: 24px;
+        color: $blue;
+        text-align: center;
+        @media (min-width: $break_lg) {
+            font-size: 36px;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        color: $font-black;
+        text-align: center;
+        @media (min-width: $break_lg) {
+            font-size: 24px;
+            font-weight: 300;
+        }
+    }
+    &__backdrop-circle {
+        width: 92px;
+        height: 92px;
+        z-index: -1;
+        position: absolute;
+        left: -26px;
+        bottom: -34px;
+        @media (min-width: $break_sm) {
+            left: 100px;
+            bottom: -64px;
+        }
+        &_top {
+            top: 188px;
+            right: -28px;
+            left: auto;
+            bottom: auto;
+            @media (min-width: $break_sm) {
+                top: -25px;
+                right: 6px;
+                left: auto;
+            }
+        }
+    }
+    &__backdrop-mirror {
+        position: absolute;
+        bottom: -13px;
+        left: 47px;
+        z-index: 5;
+        @media (min-width: $break_sm) {
+            bottom: -39px;
+            left: 182px;
+            transform: rotate(-10deg);
+        }
+        &_top {
+            left: auto;
+            bottom: auto;
+            top: 168px;
+            right: -9px;
+            transform: rotate(-93deg);
+            @media (min-width: $break_sm) {
+                display: none;
+                left: auto;
+            }
+        }
+        &_shadow {
+            display: none;
+            top: -45px;
+            right: 85px;
+            left: auto;
+            bottom: auto;
+            transform: rotate(0deg);
+            @media (min-width: $break_sm) {
+                display: block;
+            }
+        }
+    }
+    &__filter {
+        position: absolute;
+    }
+}

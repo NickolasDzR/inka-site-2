@@ -1,0 +1,43 @@
+.support {
+    background-color: $gray;
+    padding: 48px 0 23px;
+    &__heading {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    &__img {
+        @media (min-width: $break_md) {
+            width: 80px;
+            height: 80px;
+        }
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #fff;
+    }
+    &__list {
+        @media (min-width: $break_sm) {
+            justify-content: space-between;
+        }
+        @include col();
+        @include size(12);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 825px;
+        margin: 0 auto;
+    }
+    &__item {
+        @media (min-width: $break_sm) {
+            width: auto;
+        }
+        @include col();
+        @include size(4);
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+        color: $font-black;
+    }
+}
