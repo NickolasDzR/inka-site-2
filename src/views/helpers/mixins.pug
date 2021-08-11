@@ -16,37 +16,39 @@ mixin picture(value = false)
         const
                 imgClass = value.class ? value.class : false
         const
+                imgModificator = value.modificator ? "__" + imgClass + "_" + value.modificator : false
+        const
                 sm = value.sm ? value.sm : false;
         const
                 lg = value.lg ? value.lg : false;
+        const
+                md = value.md ? value.md : false;
     picture
         if lg
-            source(srcset=`img/webp/${value.name}.webp 1x,
-                img/webp/${value.name}@x2.webp 2x`
-                media="(min-width: 768px)"
-                type="image/webp"
-            )
-            source(srcset=`img/content/${value.name}.${value.format} 1x,
-                img/content/${value.name}@x2.${value.format} 2x`
-                media="(min-width: 768px)"
-            )
-        if sm
-            source(srcset=`img/webp/${value.name}.webp 1x,
-                img/webp/${value.name}@x2.webp 2x`
-                media="(min-width: 568px)"
-                type="image/webp"
-            )
-            source(srcset=`img/content/${value.name}.${value.format} 1x,
-                img/content/${value.name}@x2.${value.format} 2x`
-                media="(min-width: 568px)"
-            )
-        source(srcset=`img/content/${value.name}.webp 1x,
+            source(srcset=`img/content/${value.name}.webp 1x,
                 img/content/${value.name}@x2.webp 2x`
-            type="image/webp"
+                media="(min-width: 768px)"
+                type="image/webp"
+            )
+            source(srcset=`img/content/${value.name}.${value.format} 1x,
+                img/content/${value.name}@x2.${value.format} 2x`
+                media="(min-width: 768px)"
+            )
+        if md
+            source(srcset=`img/content/${value.name}-desk.webp 1x,
+                img/content/${value.name}-desk@x2.webp 2x`
+                media="(min-width: 768px)"
+                type="image/webp"
         )
-        +e.IMG(class=imgClass
-            srcset=`img/content/${value.name}@x2.${value.format} 2x`
-            src=`img/content/${value.name}.${value.format}`
+        if sm
+            source(srcset=`img/content/${value.name}-desk.webp 1x,
+                img/content/${value.name}-desk@x2.webp 2x`
+                media="(min-width: 576px)"
+                type="image/webp"
+            )
+        +e.IMG(class=imgClass class=imgModificator
+            srcset=`img/content/${value.name}@x2.webp 2x`
+            src=`img/content/${value.name}.webp`
             alt=value.alt
             data=value.data
         )

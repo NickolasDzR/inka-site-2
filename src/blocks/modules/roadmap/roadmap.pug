@@ -1,0 +1,25 @@
+mixin roadmap(value = false)
+    +b.roadmap(id="Roadmap")
+        .container
+            .row
+                +e.H2.heading #{value.heading}
+                +e.wrp
+                    +e.inner
+                        +e.roadline
+                            picture
+                                source(srcset="img/svg/roadline-desk.svg" media="(min-width: 768px)")
+                                +e.IMG.line(src="img/svg/roadline-mob.svg")
+                            +e.circle._first
+                                +e.span 2021
+                            +e.circle._second
+                                +e.span 2022
+                            +e.dot
+                        +e.content
+                            each val, index in value.levels
+                                +e.element
+                                    if val[2]
+                                        +e.P.level #{val[2]}
+                                    +e.P.title #{val[0]}
+                                    +e.UL.list
+                                        each item, k in val[1]
+                                            +e.LI.item #{item}

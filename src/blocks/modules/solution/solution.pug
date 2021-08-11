@@ -3,26 +3,45 @@ mixin solution(value = false)
         .container-fix
             .row(style="position: relative;")
                 +e.H2.heading #{value.heading}
-                +e.UL.content
-                    each val, i in value.solutionContent
-                        - var className = `_${i}`
-                        +e.LI.item(class=className)
-                            +e.item-wrp
-                                +e.P.title #{val[0]}
-                                +e.P.text #{val[1]}
-                            if i === 3
-                                +e.IMG.img(class="lozad" data-src=`img/content/${val[2]}.webp` data-srcset=`img/content/${val[3]}.webp 2x` width="350" height="202")
-                            else
-                                +e.IMG.img(class="lozad" data-src=`img/content/${val[2]}.webp` data-srcset=`img/content/${val[3]}.webp 2x` width="350" height="267")
+                .solution__slider.glide
+                    .glide__track.solution__track(data-glide-el="track")
+                        +e.UL.content(class="glide__slides" id="scrollTrigger")
+                            each val, i in value.solutionContent
+                                - var className = `_${i}`
+                                +e.LI.item(class=className class="glide__slide")
+                                    +e.item-wrp
+                                        +e.P.title #{val[0]}
+                                        +e.P.text #{val[1]}
+                                    if i === 3
+                                        +picture({
+                                            name: `${val[2]}`,
+                                            class: "__slider-img"
+                                        })
+                                    else
+                                        +picture({
+                                            name: `${val[2]}`,
+                                            class: "__slider-img"
+                                        })
+                    +e.custom-bullets(class="slider__bullets glide__bullets" data-glide-el="controls[nav]")
+                        each val, index in value.solutionContent
+                            +e.custom-bullet(class="slider__bullet glide__bullet" data-glide-dir="=" + index + "")
                 +e.fixed
                     +e.fixed-items
                         each val, i in value.solutionContent
                             -
                                 var
-                                    className = `img-${i}`
-                                    width = `${val[4]}`
-                                    height = `${val[5]}`
+                                        imageName = val[2]
                             if i <= 1
-                                +e.IMG.img-fixed._big(data-marker-content=className src=`img/content/${val[2]}.webp` srcset=`img/content/${val[2]}.webp 2x` width=width height=height)
+                                 +picture({
+                                     name: imageName,
+                                     sm: true,
+                                     class: "img-fixed",
+                                     modificator: "big",
+                                 })
                             else
-                                +e.IMG.img-fixed._small(data-marker-content=className src=`img/content/${val[2]}.webp` srcset=`img/content/${val[2]}.webp 2x` width=width height=height)
+                                 +picture({
+                                     name: imageName,
+                                     sm: true,
+                                     class: "img-fixed",
+                                     modificator: "small",
+                                 })

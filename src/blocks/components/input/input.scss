@@ -3,29 +3,37 @@
     max-width: 450px;
     margin: 0 auto;
     width: 100%;
+    & + & {
+        margin-top: 12px;
+    }
     &__input {
-        @media (min-width: $break_md) {
-            margin-right: 16px;
-            border-radius: 6px;
-            height: 44px;
-        }
-        padding: 10px 15px;
+        //@media (min-width: $break_md) {
+        //    margin-right: 16px;
+        //    border-radius: 6px;
+        //    height: 44px;
+        //}
+        font-family: Roboto;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 15px;
         display: block;
         border-radius: 6px;
         border: none;
         outline: none;
         margin-right: 0px;
         width: 100%;
+        background: rgba(255, 255, 255, 0.8);
     }
     &__input::placeholder {
+        font-family: Roboto;
         font-size: 16px;
+        line-height: 19px;
         color: $dark-gray;
-        background-color: $white;
     }
     &_callback {
-        @media (min-width: $break_md) {
-            margin-bottom: 0;
-        }
+        //@media (min-width: $break_md) {
+        //    margin-bottom: 0;
+        //}
         margin-bottom: 8px;
     }
 }

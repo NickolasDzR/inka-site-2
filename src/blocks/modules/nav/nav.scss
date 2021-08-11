@@ -136,12 +136,15 @@ $staticNavigationMediaBreak: $break_md;
         }
         &:hover {
             @media (min-width: $break_md) {
-                color: $font-black;
+                color: $lightest-blue;
             }
             color: $white;
             &:before {
                 transform: rotate(-180deg) translate3d(0, 0, 0);
             }
+        }
+        &:focus {
+            color: $blue;
         }
     }
     &_active {

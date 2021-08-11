@@ -5,13 +5,13 @@ mix.webpackConfig({
         plugins: [
             new SVGSpritemapPlugin('src/img/svg/**/*.svg', {
                 output: {
-                    filename: 'img/sprites/sprite.svg',
+                    filename: '/dist/img/sprites/sprite.svg',
                     svgo: true,
                     svg4everybody: true,
                 },
                 sprite: {
                     prefix: "",
-                }
+                },
             }),
         ],
     },

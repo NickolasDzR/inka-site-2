@@ -2,12 +2,23 @@
     @media (min-width: $break_md) {
         border-radius: 6px;
     }
-    background-color: $blue;
+    background: $white;
+    transition: background .2s linear, color .2s linear;
+    box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.18);
     border: none;
-    color: $white;
-    padding: 10px 15px;
+    color: $blue;
+    padding: 15px;
+    font-weight: bold;
     font-size: 16px;
     cursor: pointer;
     width: 100%;
     border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    &:hover {
+        background-color: rgba($white, 0.8)
+    }
+    &:focus {
+        color: $lightest-blue;
+    }
 }

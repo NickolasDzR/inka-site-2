@@ -3,4 +3,7 @@ import "%modules%/stats/stats";
 import "%modules%/cryptocurrencies/cryptocurrencies";
 import "%modules%/solution/solution";
 import "%modules%/slider/slider";
+import "%modules%/services/services";
+import "%modules%/roadmap/roadmap";
 import "%modules%/callback/callback";
+import "%modules%/social/social";

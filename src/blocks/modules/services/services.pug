@@ -1,0 +1,15 @@
+mixin services(value = false)
+    +b.services
+        .container
+            .row
+                +e.wrp
+                    +e.inner
+                        +e.UL.list(data-direction=value.direction data-duration=value.duration)
+                            each val, index in value.images
+                                +e.LI.item
+                                    - var iconName = "img/svg/" + value.images[index] + ".svg"
+                                    //+icon({
+                                    //    name: iconName,
+                                    //})
+                                    img(src=iconName)
+

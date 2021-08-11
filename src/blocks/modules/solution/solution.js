@@ -44,17 +44,38 @@ const contentMarkserBlock = gsap.utils.toArray(".solution__item");
 gsap.set(".solution__fixed-items > *", {xPercent: -50});
 
 const getCoordinateOfElement = (item) => {
-    return (window.innerHeight / 2) - (item.offsetHeight / 2);
+    let formula = undefined;
+    if (window.innerWidth > 1280) {
+        formula = (window.innerHeight / 2) - ((item.offsetHeight / 2) - 30)
+    } else {
+        formula = (window.innerHeight / 2) - (item.offsetHeight / 2)
+    }
+    return formula;
 };
 
-const animationFixes = ScrollTrigger.create({
-    trigger: ".solution__fixed",
-    start: `top top+=${getCoordinateOfElement(contentMarkers[0])}`,
-    end: `bottom bottom-=${getCoordinateOfElement(contentMarkers[0])}`,
+const getCoordinateOfEndPoint = () => {
+    const solutionItem = document.querySelectorAll(".solution__item"),
+        solutionItemLastItem = solutionItem[solutionItem.length - 1],
+        solutionImg = document.querySelectorAll(".solution__img-fixed"),
+        solutionImtLastItem = solutionImg[solutionImg.length - 1],
+        solutionItemLastItemHeight = solutionItemLastItem.offsetHeight - parseInt(window.getComputedStyle(solutionItemLastItem).paddingTop),
+        solutionImgLastItem = solutionImtLastItem.offsetHeight;
+
+    console.log(solutionItemLastItemHeight);
+    return (solutionItemLastItemHeight / 2) - (solutionImgLastItem / 2);
+
+}
+
+const scrollTriggerSettings = {
+    trigger: ".solution__content",
+    start: `top top+=${getCoordinateOfElement(contentMarkers[contentMarkers.length - 1])}`,
+    end: `bottom+=${getCoordinateOfEndPoint()} bottom-=${getCoordinateOfElement(contentMarkers[0])}`,
     onUpdate: getCurrentSection,
     pin: ".solution__fixed",
-    markers: true,
-});
+    invalidateOnRefresh: true,
+}
+
+let animationFixes = undefined;
 
 const solutionScrollTrigger = ScrollTrigger.create({
     trigger: ".solution",
@@ -121,11 +142,13 @@ ScrollTrigger.addEventListener("refreshInit", checkSTState);
 checkSTState();
 
 function checkSTState() {
-    if (media.matches) {
-        animationFixes.disable();
-        observer.observe();
-    } else {
-        animationFixes.enable();
+    if (animationFixes) {
+        if (media.matches) {
+            animationFixes.disable();
+            observer.observe();
+        } else {
+            animationFixes.enable();
+        }
     }
 }
 
@@ -138,9 +161,6 @@ contentMarkserBlock.forEach((elem, index) => {
             end: "bottom+=40% 50%",
             scrub: true,
             toggleActions: "play reverse play reverse",
-            onEnter: (self) => {
-                console.log(self.trigger);
-            },
         }
     });
     if (media) {
@@ -154,3 +174,58 @@ contentMarkserBlock.forEach((elem, index) => {
         }
     }
 });
+
+import Glide from '@glidejs/glide'
+
+let activeSlideIndexSolution = 0;
+let solutionSlider = document.querySelector(".solution__slider");
+
+const solutionSliderInit = new Glide('.solution__slider', {
+    startAt: activeSlideIndexSolution,
+    // autoplay: 2000,
+    type: 'carousel',
+    perView: 1,
+})
+
+const solutionSliderAnimationHeightHandler = () => {
+    if (!solutionSlider) return false;
+
+    const slideHeight = solutionSlider.querySelector(".glide__slide--active").offsetHeight;
+    const glideTrack = solutionSlider.querySelector(".glide__track").offsetHeight;
+
+    if (slideHeight !== glideTrack) {
+        solutionSlider.querySelector(".glide__track").style.height = slideHeight + "px";
+    }
+}
+
+solutionSliderInit.on(['build.after', 'run.after'], solutionSliderAnimationHeightHandler);
+
+let sliderIsInited = false;
+let triggerIsInited = false;
+const onResizeHandler = () => {
+    if (window.matchMedia("(min-width: 576px)").matches) {
+        if (!triggerIsInited) {
+            animationFixes = ScrollTrigger.create(scrollTriggerSettings);
+            animationFixes.update();
+            animationFixes.refresh();
+            solutionSliderInit.destroy();
+            sliderIsInited = false;
+            triggerIsInited = true;
+        }
+    } else {
+        if (!sliderIsInited) {
+            solutionSliderInit.mount();
+            sliderIsInited = true;
+            triggerIsInited = false;
+            if (animationFixes) {
+                animationFixes.kill(true);
+                gsap.set(".solution__fixed", {clearProps: true});
+            }
+        }
+    }
+}
+
+onResizeHandler();
+window.addEventListener('resize', function (event) {
+    return onResizeHandler();
+}, true);

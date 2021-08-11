@@ -1,6 +1,6 @@
 .solution {
     //position: relative;
-    padding: 130px 0 130px;
+    padding: 130px 0 25px;
     overflow-y: hidden;
 
     &__heading {
@@ -9,55 +9,78 @@
         font-size: 36px;
         line-height: 42px;
         color: $font-black;
+        margin-bottom: 36px;
     }
 
     &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        //padding: 40px 0;
+        @media (min-width: $break_md) {
+            padding: 50px 0;
+        }
+        @media (min-width: $break_lg) {
+            padding: 80px 0;
+        }
         @media (min-width: $break_sm) {
             flex-direction: inherit;
             align-items: center;
             justify-content: flex-start;
             margin: 0;
-            &:not(:first-of-type) {
-                opacity: 0;
-            }
+            padding: 37px 0;
+            //&:not(:first-of-type) {
+            //    opacity: 0;
+            //}
         }
-
         &:last-child {
             margin-bottom: 0;
+            @media (min-width: $break_lg) {
+                padding-bottom: 0;
+            }
         }
 
         &:first-of-type {
             margin-top: 0;
         }
-
-        & {
-            display: flex;
-            flex-direction: column;
-            padding: 40px 0;
-            @media (min-width: $break_md) {
-                padding: 100px 0;
-            }
-            @media (min-width: $break_lg) {
-                padding: 140px 0; // !!
-            }
-        }
     }
 
     &__item-wrp {
         width: 100%;
-        @media (min-width: $break_sm) {
-            @include col();
-        }
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     &__content {
-        @include col();
+        flex-wrap: wrap;
+    }
+
+    //&__content {
+    //    //@include col();
+    //    width: 100%;
+    //    @media(min-width: $break_lg) {
+    //        width: 496px;
+    //    }
+    //    @media (min-width: $break_sm) {
+    //        width: 270px;
+    //        display: flex;
+    //        flex-wrap: wrap;
+    //    }
+    //    @media (min-width: $break_md) {
+    //        width: 370px;
+    //    }
+    //}
+
+    &__slider {
         width: 100%;
         @media(min-width: $break_lg) {
             width: 496px;
         }
         @media (min-width: $break_sm) {
             width: 270px;
+            display: flex;
+            flex-wrap: wrap;
         }
         @media (min-width: $break_md) {
             width: 370px;
@@ -71,8 +94,10 @@
         line-height: 24px;
         font-weight: bold;
         margin-bottom: 24px;
+        color: $font-black;
         @media (min-width: $break_lg) {
             font-size: 48px;
+            line-height: 48px;
         }
     }
 
@@ -81,6 +106,12 @@
         font-weight: 300;
         line-height: 24px;
         margin-bottom: 36px;
+        color: $font-black;
+        @media (min-width: $break_sm) {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 22px;
+        }
         @media (min-width: $break_lg) {
             font-size: 24px;
             line-height: 36px;
@@ -125,14 +156,9 @@
         }
     }
 
-    &__fixed-items {
-        padding-top: 40px;
-    }
-
     &__img-fixed {
         position: absolute;
-        right: 50%;
-        left: 50%;
+        right: 0;
         height: auto;
         max-width: 100%;
         @media (min-width: $break_xl) {
@@ -146,9 +172,21 @@
         }
         &_big {
             width: 260px;
+            @media (min-width: $break_lg) {
+                width: 330px;
+            }
+            @media (min-width: $break_xl) {
+                width: 360px;
+            }
         }
         &_small {
             width: 390px;
+            @media (min-width: $break_lg) {
+                width: 410px;
+            }
+            @media (min-width: $break_xl) {
+                width: 620px;
+            }
         }
     }
 
@@ -164,6 +202,17 @@
     &__images-wrp {
         width: 100%;
         height: 25%;
+    }
+    &__custom-bullets {
+        margin-top: 36px;
+        @media (min-width: $break_sm) {
+            display: none;
+        }
+    }
+    &__slider-img {
+        @media (min-width: $break_sm) {
+            display: none;
+        }
     }
 }
 

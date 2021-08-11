@@ -1,8 +1,11 @@
 .slider {
-    padding: 100px 0;
+    padding: 80px 0;
     @media (min-width: $break_lg) {
         padding-top: 136px;
         padding-bottom: 136px;
+    }
+    @media (min-width: $break_md) {
+        padding-bottom: 100px;
     }
 
     .glide__slide {
@@ -64,13 +67,13 @@
             max-width: 600px;
         }
         @media (min-width: $break_sm) {
-        //    display: flex;
-        //    flex-wrap: wrap;
-        //    align-content: center;
-        //    justify-content: flex-start;
-        //    width: calc(100% - 380px);
-        //    max-width: 410px;
-        //    margin: 0 auto;
+            //    display: flex;
+            //    flex-wrap: wrap;
+            //    align-content: center;
+            //    justify-content: flex-start;
+            //    width: calc(100% - 380px);
+            //    max-width: 410px;
+            //    margin: 0 auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -80,8 +83,8 @@
             margin-bottom: 0;
         }
     }
+
     &__slides-wrp {
-        transition: height .3s linear;
         margin-bottom: 20px;
     }
 
@@ -244,6 +247,7 @@
     &__slide-icon {
         position: absolute;
         fill: $white;
+
         &_one {
             top: 23px;
             right: 44px;
@@ -256,6 +260,7 @@
                 height: 34px;
             }
         }
+
         &_two {
             top: 49px;
             right: 11px;
@@ -268,6 +273,7 @@
                 height: 35px;
             }
         }
+
         &_three {
             top: 36px;
             right: 42px;
@@ -280,6 +286,7 @@
                 height: 40px;
             }
         }
+
         &_four {
             top: 36px;
             right: 42px;
@@ -292,6 +299,7 @@
                 height: 38px;
             }
         }
+
         &_five {
             top: 49px;
             left: 9px;
@@ -304,6 +312,7 @@
                 height: 38px;
             }
         }
+
         &_six {
             top: 23px;
             left: 44px;
@@ -376,26 +385,6 @@
         width: 100%;
         height: 100%;
         pointer-events: none;
-    }
-    &__custom-bullet {
-        background-color: $gray;
-        box-shadow: none;
-        &:hover, &:focus {
-            background-color: $gray;
-            border: none;
-        }
-    }
-
-    &__custom-bullets {
-        position: relative;
-        bottom: auto;
-        @media (min-width: $break_sm) {
-            left: auto;
-            transform: translateX(0);
-        }
-    }
-    .glide__bullet--active {
-        background-color: $blue;
     }
 
     &__cryptocurrencies {

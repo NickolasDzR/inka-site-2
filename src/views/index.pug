@@ -10,6 +10,8 @@ include ../blocks/modules/support/support
 include ../blocks/modules/cryptocurrencies/cryptocurrencies
 include ../blocks/modules/solution/solution
 include ../blocks/modules/slider/slider
+include ../blocks/modules/services/services
+include ../blocks/modules/roadmap/roadmap
 include ../blocks/modules/offer/offer
 include ../blocks/modules/callback/callback
 include ../blocks/modules/social/social
@@ -18,22 +20,25 @@ include ../blocks/modules/copyright/copyright
 block variables
     -
         var
-            title = "inka"
-            navigationItems = [["About", "offer"], ["How it works", "solution"], ["Benefits", "steps"], ["Docs", "http://inka.finance/docs/Lite_Paper_Inka_1_June_2021.pdf"]]
-            countList = [["8", "Chains", "1s"], ["100", "Cryptocurrencies", "1s"], ["15", "DeFi services", "1s"]]
-            statsList = [["10+", "Chains", "25"], ["100+", "DeFi Services", "50"], ["1000+", "Crypto-currencies", "99"]]
-            imagesCount = ["img/content/1.png", "img/content/2.png", "img/content/3.png"]
-            textCount = [
-                    "Download Inka app on App Store or Play Market",
-                    "Start buying and exchanging cryptocurrencies",
-                    "Earn under 30% annually by staking cryptocurrency"
-            ]
-            supportCrypto = ["tether", "dai", "ethereum", "chainlink", "usd-coin", "btc"];
-            cryptocurrenciesList = ["Cryptocurrencies", "Exchange rate", "DeFi services", "Investments decisions"];
-            solutionContent = [["DeFi staking","Staking is an activity where a user locks or holds his funds in a cryptocurrency wallet to participate in maintaining the operations of a proof-of-stake (PoS)-based blockchain system. It is similar to crypto mining because it helps a network achieve consensus while rewarding users who participate.","liquid-swap", "liquid-swap@x2", "360", "493"],["Liquid swap","Liquid Swap is a feature that facilitates the simple exchanging of digital assets and cryptocurrencies. Trade without having to navigate complex trading dashboards. You can select the currency you'd like to buy and the currency you'd like to pay with. Enter the amount and complete the transaction.","defi-staking", "defi-staking@x2", "360", "493"],["Exchange","A decentralized exchange (DEX, decentralized exchange) is an exchange that operates based on a distributed registry, does not store funds and personal data of users on its servers, and acts only as a platform for finding matches on applications for the purchase or sale of users' assets.","dex", "dex@x2", "627", "423"],["Web3 wallet","Inka is an application based on a Web3 technology that uses decentralized protocols for all aspects of its operation. Secure and protected environment is easy accessable with a seed phrase. Create a new wallet or import existing one from any other Web3 wallets.","crypto-founds", "crypto-founds@x2", "627", "423"]]
-            sliderSlides = [["Inka wallet", "Wallet security is based on international standards. The code can be checked by anybody."], ["Rating", "Rating of services by users (rating). You can view the rating of the service based on the user vote and make the right choice."], ["Anonymous chat", "User privacy is our top priority. We strive to provide the most effective services."], ["One click", "Everything is in the InKA app. No more switching to third-party apps. All DeFi services and cryptocurrencies are available in InKA."], ["Investments", "Investments in digital gold, silver and stablecoins. Invest in the best digital currencies and precious metals in our app."], ["Digital assets", "Sending digital assets in a chat. Send messages and cryptocurrency to any user directly in the chat."]]
-            socialIconsName = ["telegram", "fb", "twitter", "medium"]
-            inputs = [["Enter your name", "text", "username"], ["Enter your e-mail address", "email", "email"]]
+                title = "inka"
+        navigationItems = [["Features", ""], ["Product", "Product"], ["Services we use", "services"], ["Roadmap", "Roadmap"]]
+        countList = [["8", "Chains", "1s"], ["100", "Cryptocurrencies", "1s"], ["15", "DeFi services", "1s"]]
+        statsList = [["10+", "Chains", "25"], ["100+", "DeFi Services", "50"], ["1000+", "Crypto-currencies", "99"]]
+        imagesCount = ["img/content/1.png", "img/content/2.png", "img/content/3.png"]
+        textCount = [
+            "Download Inka app on App Store or Play Market",
+            "Start buying and exchanging cryptocurrencies",
+            "Earn under 30% annually by staking cryptocurrency"
+        ]
+        supportCrypto = ["tether", "dai", "ethereum", "chainlink", "usd-coin", "btc"];
+        cryptocurrenciesList = ["Cryptocurrencies", "Exchange rate", "DeFi services", "Investments decisions"];
+        solutionContent = [["DeFi staking", "Stak ing is an activity where a user locks or holds his funds in a cryptocurrency wallet to participate in maintaining the operations of a proof-of-stake (PoS)-based blockchain system. It is similar to crypto mining because it helps a network achieve consensus while rewarding users who participate.", "liquid-swap", "liquid-swap@x2", "360", "493"], ["Liquid swap", "Liquid Swap is a feature that facilitates the simple exchanging of digital assets and cryptocurrencies. Trade without having to navigate complex trading dashboards. You can select the currency you'd like to buy and the currency you'd like to pay with. Enter the amount and complete the transaction.", "defi-staking", "defi-staking@x2", "360", "493"], ["Exchange", "A decentralized exchange (DEX, decentralized exchange) is an exchange that operates based on a distributed registry, does not store funds and personal data of users on its servers, and acts only as a platform for finding matches on applications for the purchase or sale of users' assets.", "dex", "dex@x2", "627", "423"], ["Web3 wallet", "Inka is an application based on a Web3 technology that uses decentralized protocols for all aspects of its operation. Secure and protected environment is easy accessable with a seed phrase. Create a new wallet or import existing one from any other Web3 wallets.", "crypto-founds", "crypto-founds@x2", "627", "423"]]
+        sliderSlides = [["Inka wallet", "Wallet security is based on international standards. The code can be checked by anybody."], ["Rating", "Rating of services by users (rating). You can view the rating of the service based on the user vote and make the right choice."], ["Anonymous chat", "User privacy is our top priority. We strive to provide the most effective services."], ["One click", "Everything is in the InKA app. No more switching to third-party apps. All DeFi services and cryptocurrencies are available in InKA."], ["Investments", "Investments in digital gold, silver and stablecoins. Invest in the best digital currencies and precious metals in our app."], ["Digital assets", "Sending digital assets in a chat. Send messages and cryptocurrency to any user directly in the chat."]]
+        socialIconsName = [["telegram"], ["fb"], ["twitter", "https://twitter.com/FinanceInka?s=09"], ["medium", "https://inkafinance-info.medium.com/"]]
+        inputs = [["Enter your name", "text", "username"], ["Enter your e-mail address", "email", "email"]]
+        marqueFirst = ["curve", "solrise", "aave", "uniswap", "polkadex", "pancakeswap", "set", "compound", "balancer"]
+        marqueSecond = ["equilibrium", "centrifuge", "venus", "linch", "stellarterm", "raydium", "mantradao", "polkaswap"]
+        roadmap = [["Q3-Q4", ["10+ Chains", "100+ DeFi services", "1000+ Cryptocurrencies"], ["level 1"]], ["Q1-Q2", ["Crosschain exchange", "Crypto ETF indexes", "DeFi mining", "Transaction analytics", "Algoritmic trade & rebalancing", "NFT platform", "Sending cryptocurrencies via chats"], "Level 2"], ["Q3-Q4", ["DeFi full functionality services", "Multisig corporate wallet", "Tokenized IPO analytics", "Insurance", "Lending", "All crossed chains"], "Level 3"]]
 
 block content
     include ../../node_modules/bemto.pug/bemto.pug
@@ -48,7 +53,7 @@ block content
                     parentClass: "header_hamburger"
                 })
                 +nav({
-                navigationListItems: navigationItems,
+                    navigationListItems: navigationItems,
                 })
     +b.MAIN.main
         +title({
@@ -59,18 +64,6 @@ block content
             content: statsList,
             heading: "Easy access to",
         })
-        //+count({
-        //countList: countList,
-        //})
-        //+steps({
-        //    heading: "Start earning with Inka in 3 steps:",
-        //    imagesUrl: imagesCount,
-        //    text: textCount,
-        //})
-        //+support({
-        //    heading: "Supporting main cryptocurrencies",
-        //    list: supportCrypto,
-        //})
         +solution({
             heading: "Product",
             solutionContent: solutionContent,
@@ -78,31 +71,39 @@ block content
         +slider({
             slides: sliderSlides,
         })
-        +offer({})
-    +b.FOOTER.footer
-        .container
-            .row
-                +e.H2.heading Receive our Newsletter
-                +callback({
-                    content: inputs,
-                    btnText: "Subscribe",
-                    elem: "footer__callback",
-                })
-                +social({
-                    iconsName: socialIconsName,
-                    elem: "footer__soc",
-                })
-                +copyright({
-                    elem: "footer__copyright",
-                })
-    +b.qr-code-image
-        +icon({
-            name: "qr-code-image",
-            class: "",
-            viewbox: "0 0 218 218",
+        +b.SECTION.section._lightgray.section-solutions(id="services")
+            +e.H2.heading Services we use
+            +e.wrapper
+                div(style="position: relative;")
+                    +services({
+                        direction: "left",
+                        duration: 30,
+                        images: marqueFirst,
+                    })
+                div(style="position: relative;")
+                    +services({
+                        direction: "right",
+                        duration: 15,
+                        images: marqueSecond,
+                    })
+        +roadmap({
+            heading: "Roadmap",
+            levels: roadmap,
         })
-        +e.SPAN Scan QR code to download
-        +e.triangle(data-popper-arrow="true")
+        +offer({heading: "Coming soon on"})
+        +count({
+            countList: countList,
+        })
+    +b.FOOTER.footer
+        +icon({name: "logo-white", class: "footer__logo-mob"})
+        +social({
+            iconsName: socialIconsName,
+            elem: "footer__soc",
+        })
+        +copyright({
+            elem: "footer__copyright",
+        })
+    .social-popup(style="background-color: white; color: #3A3A3A; padding: 5px; position: absolute" role="tooltip") comming soon
 
 block scripts
     script(src="js/manifest.js")

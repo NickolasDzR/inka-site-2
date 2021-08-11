@@ -3,6 +3,7 @@ mix.pug = require("laravel-mix-pug");
 const path = require("path");
 require('laravel-mix-copy-watched');
 require('laravel-mix-extract-media-queries');
+const mqpacker = require("@hail2u/css-mqpacker");
 
 if (process.env.section) {
     require(`${__dirname}/webpack.mix.${process.env.section}.js`);
@@ -11,48 +12,24 @@ if (process.env.section) {
         "%modules%": path.join(__dirname, "src/blocks/modules"),
         "%components%": path.join(__dirname, "src/blocks/components")
     })
-        .js("src/js/index.js", "js").version()
+        .js("src/js/index.js", "js")
         .extract()
-        .sass("src/styles/main.scss", "css/main.css").version()
-        .extractMediaQueries({
-            verbose: false,
-            minify: mix.inProduction(),
-            combined: true,
-            groups: [
-                {
-                    breakpoints: [
-                        {
-                            minWidth: 420,
-                            filename: `css/media-xs`,
-                        },
-                        {
-                            minWidth: 576,
-                            filename: `css/media-sm`,
-                        },
-                        {
-                            minWidth: 767,
-                            filename: `css/media-md`,
-                        },
-                        {
-                            minWidth: 992,
-                            filename: `css/media-lg`,
-                        },
-                        {
-                            minWidth: 1280,
-                            filename: `css/media-xl`,
-                        }
-                    ],
-                }
-            ]
-        })
+        .sass("src/styles/main.scss", "css/main.css")
         .options({
             processCssUrls: false,
             postCss: [
-                require("css-mqpacker"),
+                require('postcss-import'),
+                require('postcss-purgecss-laravel'),
+                mqpacker({
+                    sort: true
+                })
             ]
         })
+        .sourceMaps()
         .pug("src/views/index.pug", "../../dist")
         .copyDirectoryWatched("./src/fonts", "./dist/fonts")
+        .copyDirectoryWatched("./src/views/index.pug", "./dist/")
+        .copyDirectoryWatched("./src/styles/main.scss", "./dist/styles")
         .setPublicPath("dist")
         .disableNotifications()
         .browserSync({
@@ -60,4 +37,8 @@ if (process.env.section) {
             port: 4000,
             watch: true,
         });
+}
+
+if (mix.inProduction()) {
+    mix.version();
 }

@@ -4,9 +4,11 @@
     flex-wrap: wrap;
     justify-content: center;
     &__logo {
+        display: none;
         @media (min-width: $break_md) {
             width: 90px;
             height: 32px;
+            display: block;
         }
         width: 100px;
         height: 40px;

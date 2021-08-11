@@ -37,6 +37,17 @@
         position: relative;
         padding: 55px 0;
         background: rgba(234, 234, 234, 0.5);
+        //backdrop-filter: blur(6px);
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+
+        }
         border-radius: 16px;
         overflow: hidden;
         @media (min-width: $break_sm) {
@@ -72,17 +83,15 @@
             width: 210px;
             height: 210px;
         }
+        @media (min-width: $break_lg) {
+            display: none;
+        }
         &-progress {
             fill: none;
             stroke-width: 6;
             stroke-opacity: 1;
             stroke-linecap: butt;
             stroke: $melrose;
-            @media (min-width: $break_lg) {
-                r: 100;
-                cx: 105;
-                cy: 105;
-            }
 
             &_path {
                 stroke: $white;
@@ -99,6 +108,12 @@
                     stroke-dashoffset: 628;
                 }
             }
+        }
+    }
+    &__circle_big {
+        display: none;
+        @media (min-width: $break_lg) {
+            display: block;
         }
     }
 
@@ -157,7 +172,7 @@
     &__backdrop-circle {
         width: 92px;
         height: 92px;
-        z-index: -1;
+        z-index: 1;
         position: absolute;
         left: -26px;
         bottom: -34px;
@@ -212,5 +227,15 @@
     }
     &__filter {
         position: absolute;
+    }
+
+    &__blur-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }

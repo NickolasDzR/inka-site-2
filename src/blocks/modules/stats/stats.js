@@ -4,12 +4,15 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 gsap.defaults({overwrite: "auto"});
 
+const breakPoint = window.matchMedia("(min-width: 992px)").matches
 const statsCircles = document.querySelectorAll(".stats__item");
 
 // расчет анимации
 const circleAnimationHandler = (element) => {
+    const currentElement = breakPoint ? element.querySelector(".stats__circle_big .stats__circle-progress_fill") : element.querySelector(".stats__circle-progress_fill");
+
     const ww = window.matchMedia("(min-width: 992px)").matches,
-        currentElementFill = element.querySelector(".stats__circle-progress_fill").style.strokeDashoffset;
+        currentElementFill = currentElement.style.strokeDashoffset;
 
     const percentage = element.dataset.fillPercentage,
         fullDashOffset = ww ? 628 : 414,
@@ -19,7 +22,7 @@ const circleAnimationHandler = (element) => {
 
     // если высчитанное число не равняется числу которое уже стоит, то
     if (fillNum !== parseInt(currentElementFill)) {
-        return element.querySelector(".stats__circle-progress_fill").style.strokeDashoffset = fillNum;
+        return currentElement.style.strokeDashoffset = fillNum;
     }
 
     return false;
@@ -47,9 +50,7 @@ statsCircles.forEach((el, index) => {
         once: true,
         onEnter: (self) => {
             circleAnimationHandler(self.trigger);
-
             triggeredElement = true;
-
         },
     });
 })

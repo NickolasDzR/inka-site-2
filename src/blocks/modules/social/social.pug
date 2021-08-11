@@ -6,8 +6,15 @@ mixin social(value = false)
         +e.UL.list
             each val, i in value.iconsName
                     +e.LI.item
-                        +e.A.link(href="#" target="_black")
-                            +icon({
-                                name: val,
-                                class: "soc__svg",
-                            })
+                        if val[1]
+                            +e.A.link(href=val[1] target="_black")
+                                +icon({
+                                    name: val[0],
+                                    class: "soc__svg",
+                                })
+                        else
+                            +e.A.link(target="_black")
+                                +icon({
+                                    name: val[0],
+                                    class: "soc__svg",
+                                })
