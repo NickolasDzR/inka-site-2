@@ -438,4 +438,9 @@ strong {
     padding: 5px;
     position: absolute;
     margin-bottom: 10px !important;
+
+    display: none;
+    &[data-popper-placement="top"] {
+        display: block;
+    }
 }

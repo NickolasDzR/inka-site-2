@@ -16,7 +16,6 @@ const popperSettings = {
 };
 
 socLinks.forEach(el => {
-    console.log(el.href.length);
     if (el.href.length === 0) {
 
         el.addEventListener("click", function () {

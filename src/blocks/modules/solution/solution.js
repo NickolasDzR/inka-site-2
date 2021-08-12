@@ -92,7 +92,7 @@ const solutionScrollTrigger = ScrollTrigger.create({
 contentMarkserBlock.forEach((marker, index) => {
     marker.content = contentMarkers[index];
 
-    gsap.set(marker.content, {autoAlpha: 0});
+    if (index !== 0) gsap.set(marker.content, {autoAlpha: 0});
 
     marker.content.enter = function () {
         gsap.fromTo(marker.content, {autoAlpha: 0}, {duration: 0.3, autoAlpha: 1});
