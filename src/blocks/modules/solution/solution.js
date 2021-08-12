@@ -94,7 +94,6 @@ const scrollTriggerSettings = {
     trigger: ".solution__content",
     start: `top top+=${getCoordinateOfElement("top")}`,
     end: `bottom bottom-=${getCoordinateOfElement("bottom")}`,
-    markers: true,
     onUpdate: getCurrentSection,
     invalidateOnRefresh: true,
     pin: ".solution__fixed",
