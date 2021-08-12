@@ -35,16 +35,16 @@ hamburger.addEventListener("click", (e) => {
 let scollPosition = window.pageYOffset;
 let setTimeoutDeleteClass = undefined;
 
-// const deleteClassWithTime = (elem) => {
-//     console.log(header.classList.contains("header_hovered"));
-//     if (!header.classList.contains("header_hovered") && !elem.classList.contains("header_hidden") && setTimeoutDeleteClass !== undefined) {
-//         setTimeoutDeleteClass = setTimeout(() => {
-//             elem.classList.add("header_hidden");
-//             setTimeoutDeleteClass = undefined;
-//         }, 3000);
-//         return false;
-//     }
-// }
+const deleteClassWithTime = (elem) => {
+    console.log(header.classList.contains("header_hovered"));
+    if (!header.classList.contains("header_hovered") && !elem.classList.contains("header_hidden") && setTimeoutDeleteClass !== undefined) {
+        setTimeoutDeleteClass = setTimeout(() => {
+            elem.classList.add("header_hidden");
+            setTimeoutDeleteClass = undefined;
+        }, 3000);
+        return false;
+    }
+}
 
 let header = document.querySelector(".header");
 ``
@@ -67,13 +67,13 @@ window.addEventListener("scroll", navBarPosition);
 
 navBarPosition();
 
-// header.addEventListener("mouseover", () => {
-//     if (!header.classList.contains("header_hovered")) {
-//         header.classList.add("header_hovered");
-//     }
-// });
-// header.addEventListener("mouseout", () => {
-//     if (header.classList.contains("header_hovered")) {
-//         header.classList.remove("header_hovered");
-//     }
-// });
+header.addEventListener("mouseover", () => {
+    if (!header.classList.contains("header_hovered")) {
+        header.classList.add("header_hovered");
+    }
+});
+header.addEventListener("mouseout", () => {
+    if (header.classList.contains("header_hovered")) {
+        header.classList.remove("header_hovered");
+    }
+});

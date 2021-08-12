@@ -284,7 +284,7 @@ strong {
 }
 
 .footer {
-    padding: 46px 0 26px;
+    padding: 35px 0 45px;
     background-color: $font-black;
     @media(min-width: $break_md) {
         padding: 74px 0;
@@ -311,7 +311,7 @@ strong {
     }
 
     &__soc {
-        margin-bottom: 52px;
+        margin-bottom: 40px;
     }
 
     &__copyright {
@@ -378,7 +378,7 @@ strong {
 
 .slider__bullet {
     position: relative;
-    width: 20px;
+    width: 14px;
     height: 20px;
     background-color: transparent;
     box-shadow: none;

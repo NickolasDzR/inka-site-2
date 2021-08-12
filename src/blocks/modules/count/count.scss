@@ -4,8 +4,8 @@
     background: linear-gradient(259.1deg, #1c1c9d 0%, #7171ff 35.3%, #c4cdff 101.76%);
     &__wrp {
         width: 100%;
-        padding-top: 70px;
-        padding-bottom: 105px;
+        padding-top: 38px;
+        padding-bottom: 104px;
         position: relative;
         overflow: hidden;
         @media (min-width: $break_sm) {
@@ -35,7 +35,7 @@
     &__background-img-mob {
         position: absolute;
         right: 0;
-        bottom: -60px;
+        bottom: -54px;
         margin: 0;
         padding: 0;
         z-index: 1;
@@ -153,7 +153,7 @@
         line-height: 28px;
         text-align: center;
         color: $white;
-        margin-bottom: 22px;
+        margin-bottom: 12px;
         @media (min-width: $break_md) {
             text-align: left;
             margin-left: 15px;
@@ -166,7 +166,7 @@
         line-height: 27px;
         text-align: center;
         color: $white;
-        margin-bottom: 28px;
+        margin-bottom: 26px;
         @media (min-width: $break_md) {
             text-align: left;
             margin-left: 15px;

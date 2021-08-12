@@ -61,13 +61,14 @@ if (process.env.section) {
         .pug("src/views/index.pug", "../../dist")
         .copyDirectoryWatched("./src/fonts", "./dist/fonts")
         .copyDirectoryWatched("./src/views/index.pug", "./dist/")
-        .copyDirectoryWatched("./src/styles/main.scss", "./dist/styles")
+        .copyDirectoryWatched("./src/styles/main.scss", "./dist/css")
         .setPublicPath("dist")
         .disableNotifications()
         .browserSync({
             server: "./dist/",
             port: 4000,
             watch: true,
+            notify: false
         });
 }
 

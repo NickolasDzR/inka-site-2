@@ -1,6 +1,6 @@
 .title {
-    padding-top: 140px;
-    padding-bottom: 80px;
+    padding-top: 103px;
+    padding-bottom: 62px;
     @media (min-width: $break_md) {
         padding-top: 170px;
         padding-bottom: 130px;
@@ -26,7 +26,8 @@
     &__img-title {
         height: auto;
         margin: 0 auto;
-        margin-bottom: 45px;
+        margin-bottom: 29px;
+        width: 100%;
         @media (min-width: $break_sm) {
             margin-bottom: 70px;
         }
@@ -55,8 +56,9 @@
     &__heading {
         font-weight: 700;
         font-size: 36px;
+        line-height: 46px;
         width: 100%;
-        margin-bottom: 25px;
+        margin-bottom: 13px;
         text-align: center;
         @media (min-width: $break_lg) {
             text-align: left;
@@ -71,7 +73,7 @@
 
     &__text {
         font-size: 18px;
-        line-height: 24px;
+        line-height: 26px;
         font-weight: 300;
         color: $font-black;
         text-align: center;

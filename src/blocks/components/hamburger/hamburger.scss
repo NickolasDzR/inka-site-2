@@ -119,11 +119,11 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
 
 .hamburger--slider {
     .hamburger-inner {
-        top: $hamburger-layer-height * 0.5;
+        top: 7px;
 
 
         &::after {
-            top: 6px;
+            top: 5px;
         }
     }
 
@@ -136,12 +136,12 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
             }
 
             transform: translate3d(0, $y-offset, 0) rotate(45deg);
-            top: -5px;
+            top: 2px;
 
             &::after {
                 transform: translate3d(0, $y-offset * -2, 0) rotate(-90deg);
                 width: 20px;
-                top: 10px;
+                top: 10.4px;
             }
         }
     }

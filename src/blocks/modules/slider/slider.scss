@@ -1,5 +1,5 @@
 .slider {
-    padding: 80px 0;
+    padding: 24px 0 92px;
     max-width: 100%;
     overflow-x: hidden;
     @media (min-width: $break_lg) {
@@ -87,16 +87,16 @@
     }
 
     &__slides-wrp {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     &__title {
         margin: 0;
         padding: 0;
-        font-size: 28px;
+        font-size: 24px;
         font-weight: bold;
         color: $font-black;
-        margin-bottom: 28px;
+        margin-bottom: 35px;
         @media (min-width: $break_xl) {
             margin-bottom: 28px;
         }
@@ -109,9 +109,10 @@
     &__subtitle {
         margin: 0;
         padding: 0;
+        font-size: 18px;
         font-weight: 300;
         color: $font-black;
-        line-height: 24px;
+        line-height: 27px;
         @media (min-width: $break_lg) {
             font-size: 24px;
             line-height: 36px;
@@ -365,9 +366,9 @@
     &__sign {
         margin: 0;
         padding: 0;
-        font-size: 24px;
+        font-size: 18px;
         line-height: 36px;
-        margin-bottom: 20px;
+        margin-bottom: 14px;
         @media (min-width: $break_xl) {
             margin-bottom: 56px;
         }
@@ -396,28 +397,4 @@
             @include size(6);
         }
     }
-
-    //&__bullets {
-    //    margin-top: 35px;
-    //    &_black {
-    //        .slider__bullet {
-    //            background-color: $gray;
-    //            &:hover {
-    //                background-color: #585858;
-    //            }
-    //        }
-    //    }
-    //}
-
-    //&__custom-bullet {
-    //    & + & {
-    //        margin-left: 28px;
-    //        @media (min-width: $break_lg) {
-    //            margin-left: 38px;
-    //        }
-    //    }
-    //    &.glide__bullet--active {
-    //        background-color: #585858 !important;
-    //    }
-    //}
 }
