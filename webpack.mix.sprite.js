@@ -13,6 +13,9 @@ mix.webpackConfig({
                 },
                 sprite: {
                     prefix: "",
+                },
+                styles: {
+                    keepAttributes: true,
                 }
             }),
         ],

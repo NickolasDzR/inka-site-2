@@ -59,9 +59,7 @@ window.onload = () => {
             solutionItemLastItemHeight = solutionItemLastItem.offsetHeight - parseInt(window.getComputedStyle(solutionItemLastItem).paddingTop),
             solutionImgLastItemHeight = solutionImgLastItem.offsetHeight;
 
-        console.log(solutionItemLastItemHeight, solutionImgLastItemHeight);
         return (solutionItemLastItemHeight / 2) - (solutionImgLastItemHeight / 2);
-
     }
 
     const scrollTriggerSettings = {

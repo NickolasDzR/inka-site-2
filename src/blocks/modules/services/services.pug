@@ -8,8 +8,5 @@ mixin services(value = false)
                             each val, index in value.images
                                 +e.LI.item
                                     - var iconName = "img/svg/" + value.images[index] + ".svg"
-                                    //+icon({
-                                    //    name: iconName,
-                                    //})
                                     img(src=iconName)
 

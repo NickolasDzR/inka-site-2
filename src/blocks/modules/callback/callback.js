@@ -34,30 +34,29 @@ async function sendData(formData) {
             }
         });
     }).catch(error => {
-        console.log(error);
+        console.error(error);
     });
 }
 
 const messageHandler = (message, type) => {
     let messageAnswer;
-    let footerHeading = document.querySelector(".footer__heading");
+    let formMessage = document.querySelector(".count__subheading");
 
     if (type === "error") {
         messageAnswer = message;
-        footerHeading.classList.add("footer__heading_error");
+        formMessage.classList.add("footer__heading_error");
     }
     if (type === "Success!") {
         messageAnswer = message;
-        if (footerHeading.classList.contains("footer__heading_error")) {
-            footerHeading.classList.remove("footer__heading_error");
+        if (formMessage.classList.contains("footer__heading_error")) {
+            formMessage.classList.remove("footer__heading_error");
         }
     }
     if (type === "valid error") {
         messageAnswer = message;
     }
 
-    footerHeading = document.querySelector(".footer__heading");
-    return footerHeading.innerHTML = messageAnswer;
+    return formMessage.innerHTML = messageAnswer;
 };
 
 btn.addEventListener("click", (e) => {
