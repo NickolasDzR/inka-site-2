@@ -21,6 +21,6 @@ mixin slider(value = false)
                                 +e.LI.item.glide__slide
                                     +e.P.title #{val[0]}
                                     +e.P.subtitle #{val[1]}
-                    +e.custom-bullets(class="slider__bullets glide__bullets" data-glide-el="controls[nav]")
+                    +e.custom-bullets(class="slider__bullets _black glide__bullets" data-glide-el="controls[nav]")
                         each val, index in value.slides
                             +e.custom-bullet(class="slider__bullet glide__bullet" data-glide-dir="=" + index + "")

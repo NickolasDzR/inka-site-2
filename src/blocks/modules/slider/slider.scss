@@ -393,4 +393,28 @@
             @include size(6);
         }
     }
+
+    &__bullets {
+        margin-top: 35px;
+        &_black {
+            .slider__bullet {
+                background-color: $gray;
+                &:hover {
+                    background-color: #585858;
+                }
+            }
+        }
+    }
+
+    &__custom-bullet {
+        & + & {
+            margin-left: 28px;
+            @media (min-width: $break_lg) {
+                margin-left: 38px;
+            }
+        }
+        &.glide__bullet--active {
+            background-color: #585858 !important;
+        }
+    }
 }
