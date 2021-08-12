@@ -34,8 +34,6 @@ itemContainer.forEach(function (container) {
         onDrag: function () {
             let num = solutionDirection ? -this.x / totalDistance : this.x / totalDistance;
 
-            console.log(-this.x / totalDistance);
-
             let progress = wrap(num);
             animation.progress(progress);
         },

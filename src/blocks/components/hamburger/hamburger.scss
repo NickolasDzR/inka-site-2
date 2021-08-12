@@ -21,6 +21,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
 .hamburger {
     position: absolute;
     right: 0;
+    left: auto;
     top: 15px;
     z-index: 101;
     overflow: visible;
@@ -85,7 +86,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
     top: 50%;
     margin-top: -3px;
 
-    &, &::after {
+    &, &::before, &::after {
         position: absolute;
         width: $hamburger-layer-width;
         height: $hamburger-layer-height;
@@ -95,18 +96,24 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
         transition-duration: 0.15s;
         transition-timing-function: ease;
     }
-    &::after {
-        width: 10px;
-    }
+    //&::after {
+    //    width: 10px;
+    //}
 
-    &::after {
+    &::before, &::after {
         content: "";
         display: block;
+    }
+
+    &::before {
+        top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
     }
 
     &::after {
         bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
     }
+
+
 }
 
 
@@ -124,7 +131,12 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
         .hamburger-inner {
             $y-offset: $hamburger-layer-spacing + $hamburger-layer-height;
 
+            &::before {
+                opacity: 0;
+            }
+
             transform: translate3d(0, $y-offset, 0) rotate(45deg);
+            top: -5px;
 
             &::after {
                 transform: translate3d(0, $y-offset * -2, 0) rotate(-90deg);

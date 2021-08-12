@@ -36,8 +36,9 @@
         height: 100%;
         position: relative;
         padding: 55px 0;
+        backdrop-filter: blur(6px) saturate(160%);
+        -webkit-backdrop-filter: blur(6px) saturate(160%);
         background: rgba(234, 234, 234, 0.5);
-        //backdrop-filter: blur(6px);
         &::before {
             position: absolute;
             content: "";

@@ -10,23 +10,23 @@ mix.extractMediaQueries({
             breakpoints: [
                 {
                     minWidth: 420,
-                    filename: `dist/css/media-xs`,
+                    filename: `./dist/css/media-xs`,
                 },
                 {
                     minWidth: 576,
-                    filename: `dist/css/media-sm`,
+                    filename: `./dist/css/media-sm`,
                 },
                 {
                     minWidth: 767,
-                    filename: `dist/css/media-md`,
+                    filename: `./dist/css/media-md`,
                 },
                 {
                     minWidth: 992,
-                    filename: `dist/css/media-lg`,
+                    filename: `./dist/css/media-lg`,
                 },
                 {
                     minWidth: 1280,
-                    filename: `dist/css/media-xl`,
+                    filename: `./dist/css/media-xl`,
                 }
             ],
         }
