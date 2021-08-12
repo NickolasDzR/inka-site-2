@@ -23,4 +23,4 @@ mixin slider(value = false)
                                     +e.P.subtitle #{val[1]}
                     +e.custom-bullets(class="slider__bullets _black glide__bullets" data-glide-el="controls[nav]")
                         each val, index in value.slides
-                            +e.custom-bullet(class="slider__bullet glide__bullet" data-glide-dir="=" + index + "")
+                            +e.custom-bullet(class="slider__bullet _black glide__bullet" data-glide-dir="=" + index + "")

@@ -42,26 +42,26 @@
         display: block;
         order: 0;
         position: absolute;
-        top: -110px;
+        top: -50px;
         right: 50%;
         left: 50%;
         transform: translate(-50%);
         @media (min-width: $break_xl) {
-            top: -566px;
+            top: -176px;
             width: 312px;
         }
         @media (min-width: $break_md) {
-            top: -263px;
+            top: 87px;
             width: 270px;
         }
         @media (min-width: $break_lg) {
-            top: -234px;
+            top: 26px;
             width: 190px;
         }
         @media (min-width: $break_sm) {
             width: 190px;
             height: auto;
-            top: -120px;
+            top: 70px;
             right: 15px;
             left: auto;
             transform: translateX(0);
@@ -69,7 +69,7 @@
     }
 
     &__wrp {
-        padding: 264px 0 21px;
+        padding: 320px 0 21px;
         background-color: $gray;
         @media (min-width: $break_lg) {
             padding: 88px 0;

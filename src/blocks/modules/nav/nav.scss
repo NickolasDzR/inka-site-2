@@ -110,6 +110,7 @@ $staticNavigationMediaBreak: $break_md;
         transform: translateZ(-30px);
         transition: transform 700ms ease, color .2s linear;
         font-size: 18px;
+        font-weight: 400;
         color: #616161;
         @media (min-width: $break_md) {
             transform: translateZ(0);

@@ -5,11 +5,14 @@ h1, h2, h3, h4, h5, h6, ul {
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
     min-width: 100%;
     background-color: #fff;
+    max-width: 100%;
     overflow-x: hidden;
     font-family: $font-family-base;
     font-size: 16px;
@@ -96,6 +99,7 @@ strong {
     @media (min-width: $break_md) {
         padding-top: 80px;
     }
+
     &__heading {
         font-weight: 900;
         font-size: 36px;
@@ -109,9 +113,11 @@ strong {
             margin-bottom: 92px;
         }
     }
+
     &_lightgray {
         background-color: $light-gray;
     }
+
     &-solutions {
         .section__wrapper {
             padding: {
@@ -318,6 +324,7 @@ strong {
             justify-content: space-between;
         }
     }
+
     &__logo-mob {
         width: 68px;
         height: 24px;
@@ -332,11 +339,12 @@ strong {
 
 .glide {
     &__bullet {
-        background-color: $gray;
-        box-shadow: none;
+        //background-color: $gray;
+        //box-shadow: none;
         &:hover, &:focus {
-            background-color: $gray;
-            border: none;
+            //background-color: $gray;
+            //border: none;
+            background-color: transparent;
         }
     }
 
@@ -347,9 +355,6 @@ strong {
             left: auto;
             transform: translateX(0);
         }
-    }
-    &__bullet--active {
-        background-color: $blue;
     }
 
     &__track {
@@ -365,7 +370,51 @@ strong {
     margin-bottom: 10px !important;
 
     display: none;
+
     &[data-popper-placement="top"] {
         display: block;
+    }
+}
+
+.slider__bullet {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: $break_md) {
+        & + & {
+            margin-left: 28px;
+        }
+    }
+    &:hover::before {
+        background-color: $blue;
+    }
+    &::before {
+        content: "";
+        background-color: $gray;
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        transition: background-color .2s linear;
+        @media (min-width: $break_md) {
+            width:  16px;
+            height: 16px;
+        }
+    }
+    &.glide__bullet--active::before {
+        background-color: $blue;
+    }
+    &_black {
+        &:hover:before {
+            background-color: #585858;
+        }
+        &.glide__bullet--active:before {
+            background-color: #585858;
+        }
     }
 }
