@@ -7,7 +7,7 @@ let inkaSlider = document.querySelector(".glide-slider");
 
 const inkaSliderInit = new Glide('.glide-slider', {
     startAt: activeSlideIndex,
-    autoplay: sliderAutoplaySpeed * 1000,
+    // autoplay: sliderAutoplaySpeed * 1000,
     type: 'carousel',
     perView: 1,
 }).mount();

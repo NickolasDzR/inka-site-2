@@ -195,5 +195,8 @@ $staticNavigationMediaBreak: $break_md;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+        @media (min-width: $break_md) {
+            display: none;
+        }
     }
 }

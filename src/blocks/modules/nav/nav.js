@@ -33,7 +33,7 @@ hamburger.addEventListener("click", (e) => {
     navHandler(e);
 });
 
-let scollPosition = window.pageYOffset;
+let scrollPosition = window.pageYOffset;
 let setTimeoutDeleteClass = undefined;
 
 const deleteClassWithTime = (elem) => {
@@ -49,8 +49,11 @@ const deleteClassWithTime = (elem) => {
 
 let header = document.querySelector(".header");
 const navigation = document.querySelector(".nav");
+let oldPositionScroll = 0;
 
 const navBarPosition = () => {
+    oldPositionScroll = scrollY;
+
     header = document.querySelector(".header");
     if (scrollY > 40 && !navigation.classList.contains("nav_active")) {
         header.classList.add("header_hidden");
@@ -58,10 +61,11 @@ const navBarPosition = () => {
         header.classList.remove("header_hidden");
     }
 
-    if (scollPosition > window.pageYOffset) {
+    if (scrollPosition > window.pageYOffset) {
         header.classList.remove("header_hidden");
     }
-    scollPosition = window.pageYOffset;
+
+    scrollPosition = window.pageYOffset;
     // deleteClassWithTime(header);
 };
 
@@ -106,6 +110,7 @@ window.onload = () => {
 const productAnchor = document.querySelector("a[href='#Product']");
 const serviceAnchor = document.querySelector("a[href='#services']");
 const roadMapAnchor = document.querySelector("a[href='#Roadmap']");
+const headerLogo = document.querySelector(".header__logo");
 
 productAnchor.addEventListener("click", () => {
     jump("#Product", {
@@ -125,5 +130,12 @@ roadMapAnchor.addEventListener("click", () => {
     jump("#Roadmap", {
         offset: -100,
         duration: 300,
+    })
+});
+
+headerLogo.addEventListener("click", () => {
+    jump("body", {
+        offset: 0,
+        duration: 0
     })
 });

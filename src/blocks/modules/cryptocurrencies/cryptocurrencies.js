@@ -13,14 +13,14 @@ const runningAnimation = () => {
                 el.classList.add(activationAnimationClass);
                 cryptocurrenciesCircleInner.classList.add("cryptocurrencies__circle-inner_scale")
             }
-        }, cryptoAnimationInitBy * 1000 * 10);
+        }, cryptoAnimationInitBy * 1000 * 2);
         setTimeout(function () {
             setInterval(() => {
                 if (el.classList.contains(activationAnimationClass)) {
                     el.classList.remove(activationAnimationClass);
                     cryptocurrenciesCircleInner.classList.remove("cryptocurrencies__circle-inner_scale")
                 }
-            }, cryptoAnimationInitBy * 1000 * 10);
+            }, cryptoAnimationInitBy * 1000 * 2);
         }, cryptoAnimationInitBy * 1000);
     })
 }

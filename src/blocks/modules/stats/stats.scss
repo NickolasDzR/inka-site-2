@@ -204,8 +204,8 @@
         left: 47px;
         z-index: 5;
         @media (min-width: $break_sm) {
-            bottom: -39px;
-            left: 182px;
+            bottom: -20px;
+            left: 173px;
             transform: rotate(-10deg);
         }
         &_top {
@@ -228,6 +228,9 @@
             transform: rotate(0deg);
             @media (min-width: $break_sm) {
                 display: block;
+                right: 70px;
+                bottom: auto;
+                top: -40px;
             }
         }
     }

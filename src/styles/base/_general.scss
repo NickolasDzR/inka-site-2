@@ -175,19 +175,6 @@ strong {
     }
 
     &__logo {
-        @media (min-width: $break_md) {
-            position: relative;
-            top: auto;
-            bottom: auto;
-            left: auto;
-            transform: none;
-            width: 89px;
-            height: 32px;
-            margin-bottom: auto;
-            margin-top: auto;
-            margin-left: 15px;
-            margin-right: 15px;
-        }
         z-index: 101;
         position: absolute;
         top: 50%;
@@ -196,6 +183,18 @@ strong {
         transform: translateY(-50%);
         width: 56px;
         height: 20px;
+        cursor: pointer;
+
+        @media (min-width: $break_md) {
+            position: relative;
+            top: auto;
+            bottom: auto;
+            left: auto;
+            transform: none;
+            width: 89px;
+            height: 32px;
+            margin: auto 15px;
+        }
     }
 }
 
@@ -381,7 +380,7 @@ strong {
     padding: 5px;
     position: absolute;
     margin-bottom: 10px !important;
-
+    border-radius: 4px;
     display: none;
 
     &[data-popper-placement="top"] {
@@ -426,10 +425,16 @@ strong {
     }
     &_black {
         &:hover:before {
-            background-color: #585858;
+            @media (min-width: $break_sm) {
+                background-color: #585858;
+            }
+            background-color: $blue;
         }
         &.glide__bullet--active:before {
-            background-color: #585858;
+            @media (min-width: $break_sm) {
+                background-color: #585858;
+            }
+            background-color: $blue;
         }
     }
 }
