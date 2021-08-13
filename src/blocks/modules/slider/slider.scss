@@ -1,7 +1,10 @@
 .slider {
-    padding: 24px 0 92px;
+    padding: 24px 0;
     max-width: 100%;
     overflow-x: hidden;
+    @media (min-width: $break_sm) {
+        padding-bottom: 90px;
+    }
     @media (min-width: $break_lg) {
         padding-top: 136px;
         padding-bottom: 136px;

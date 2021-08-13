@@ -2,9 +2,9 @@ const circle = document.querySelector(".cryptocurrencies__circle-inner"),
     smallCircles = document.querySelectorAll(".cryptocurrencies__item-img"),
     cryptocurrenciesCircleInner = document.querySelector(".cryptocurrencies__circle-inner"),
     cryptoAnimationTime = document.querySelector(".cryptocurrencies__controll").dataset.animationTime,
-cryptoAnimationInitBy = document.querySelector(".cryptocurrencies__controll").dataset.animationHideCrypto;
+    cryptoAnimationInitBy = parseInt(document.querySelector(".cryptocurrencies__controll").dataset.animationHideCrypto);
 
-const runningAnimation = (arg) => {
+const runningAnimation = () => {
     smallCircles.forEach((el, index) => {
         const realIndex = index + 1;
         const activationAnimationClass = `cryptocurrencies__item-img_${realIndex}_transform`;
@@ -13,15 +13,15 @@ const runningAnimation = (arg) => {
                 el.classList.add(activationAnimationClass);
                 cryptocurrenciesCircleInner.classList.add("cryptocurrencies__circle-inner_scale")
             }
-        }, parseInt(cryptoAnimationInitBy * 1000) * 2);
-        setTimeout(function() {
+        }, cryptoAnimationInitBy * 1000 * 10);
+        setTimeout(function () {
             setInterval(() => {
                 if (el.classList.contains(activationAnimationClass)) {
                     el.classList.remove(activationAnimationClass);
                     cryptocurrenciesCircleInner.classList.remove("cryptocurrencies__circle-inner_scale")
                 }
-            }, (parseInt(cryptoAnimationInitBy * 1000) * 2));
-        }, parseInt(cryptoAnimationInitBy) * 1000)
+            }, cryptoAnimationInitBy * 1000 * 10);
+        }, cryptoAnimationInitBy * 1000);
     })
 }
 

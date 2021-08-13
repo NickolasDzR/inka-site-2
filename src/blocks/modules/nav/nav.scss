@@ -87,6 +87,19 @@ $staticNavigationMediaBreak: $break_md;
                 margin-top: 0;
             }
         }
+        &:not(:last-of-type) .nav__link:after {
+            content: "";
+            width: calc(100% - 30px);
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            height: 1px;
+            background-color: #E3E3E3;
+            transition: transform .1s linear;
+            @media (min-width: $break_md) {
+                display: none;
+            }
+        }
     }
     &__item + &__item {
         @media (min-width: $break_md) {
@@ -98,9 +111,6 @@ $staticNavigationMediaBreak: $break_md;
         @media (min-width: $break_lg) {
             margin-left: 60px;
         }
-        @media (min-width: $break_xl) {
-            margin-left: 80px;
-        }
     }
 
     &__link {
@@ -110,8 +120,8 @@ $staticNavigationMediaBreak: $break_md;
         transform: translateZ(-30px);
         transition: transform 700ms ease, color .2s linear;
         font-size: 18px;
-        font-weight: 400;
-        color: #616161;
+        font-weight: 500;
+        color: $font-black;
         @media (min-width: $break_md) {
             transform: translateZ(0);
             padding: {
@@ -147,6 +157,11 @@ $staticNavigationMediaBreak: $break_md;
         &:focus {
             color: $blue;
         }
+        &_hide-border {
+            &:after {
+                transform: translateX(400%);
+            }
+        }
     }
     &_active {
         height: 100vh;
@@ -156,10 +171,29 @@ $staticNavigationMediaBreak: $break_md;
             transform: translate3d(0, 0, 0);
             opacity: 1;
         }
+        .nav__copypright {
+            transition-delay: .5s;
+            opacity: 1;
+        }
     }
     @for $i from 1 through $listItems {
         &__item:nth-child(#{$i}) {
             transition-delay: #{$i*20}ms;
         }
+    }
+
+    &__copypright {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 150%;
+        opacity: 0;
+        transition: opacity .1s linear;
+
+        position: absolute;
+        bottom: 24px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
     }
 }

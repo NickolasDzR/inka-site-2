@@ -5,16 +5,24 @@ mixin social(value = false)
     +b.soc(class=elem)
         +e.UL.list
             each val, i in value.iconsName
+                if i === 4
+                    +e.LI.item(class="_github")
+                        +e.A.link(target="_black")
+                            +icon({
+                                name: val[0],
+                                class: "soc__svg",
+                            })
+                else if val[1]
                     +e.LI.item
-                        if val[1]
-                            +e.A.link(href=val[1] target="_black")
-                                +icon({
-                                    name: val[0],
-                                    class: "soc__svg",
-                                })
-                        else
-                            +e.A.link(target="_black")
-                                +icon({
-                                    name: val[0],
-                                    class: "soc__svg",
-                                })
+                        +e.A.link(href=val[1] target="_black")
+                            +icon({
+                                name: val[0],
+                                class: "soc__svg",
+                            })
+                else
+                    +e.LI.item
+                        +e.A.link(target="_black")
+                            +icon({
+                                name: val[0],
+                                class: "soc__svg",
+                            })

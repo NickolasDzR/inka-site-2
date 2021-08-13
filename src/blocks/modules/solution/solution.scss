@@ -2,6 +2,9 @@
     //position: relative;
     padding: 117px 0 25px;
     overflow-y: hidden;
+    @media (min-width: $break_xl) {
+        padding-top: 125px;
+    }
 
     &__heading {
         width: 100%;

@@ -13,12 +13,6 @@ solutionItemsWrp.forEach(el => {
     solutionItemsWrpOffsetTop.push(el.offsetTop);
 });
 
-window.onbeforeunload = function () {
-    if(window.scrollTo) window.scrollTo(0,0);
-};
-
-if(history && history.scrollRestoration) history.scrollRestoration = "manual";
-
 gsap.registerPlugin(ScrollTrigger);
 gsap.defaults({overwrite: "auto"});
 
@@ -79,17 +73,6 @@ const getCoordinateOfElement = (position) => {
     return (viewportHeight / 2) - (getCorrectImageHeight() / 2)
 };
 
-const getCoordinateOfEndPoint = () => {
-    const solutionItem = document.querySelectorAll(".solution__item"),
-        solutionItemLastItem = solutionItem[solutionItem.length - 1],
-        solutionImg = document.querySelectorAll(".solution__img-fixed"),
-        solutionImgLastItem = solutionImg[solutionImg.length - 1],
-        solutionItemLastItemHeight = solutionItemLastItem.offsetHeight - parseInt(window.getComputedStyle(solutionItemLastItem).paddingTop),
-        solutionImgLastItemHeight = solutionImgLastItem.offsetHeight;
-
-    return (solutionItemLastItemHeight / 2) - (solutionImgLastItemHeight / 2);
-}
-
 const scrollTriggerSettings = {
     trigger: ".solution__content",
     start: `top top+=${getCoordinateOfElement("top")}`,
@@ -98,8 +81,6 @@ const scrollTriggerSettings = {
     invalidateOnRefresh: true,
     pin: ".solution__fixed",
 }
-
-// =${getCoordinateOfEndPoint()}
 
 let animationFixes = undefined;
 
@@ -243,7 +224,7 @@ const onResizeHandler = () => {
     }
 }
 
-window.addEventListener('resize', function (event) {
+window.addEventListener('resize', function () {
     return onResizeHandler();
 }, true);
 
@@ -258,8 +239,10 @@ ScrollTrigger.matchMedia({
         animationFixes.refresh();
     },
     "(max-width: 576px)": function () {
-        animationFixes.kill(true);
-        gsap.set(".solution__fixed", {clearProps: "all"});
+        if (animationFixes) {
+            animationFixes.kill(true);
+            gsap.set(".solution__fixed", {clearProps: "all"});
+        }
     }
 });
 

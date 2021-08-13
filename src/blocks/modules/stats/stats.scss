@@ -73,6 +73,11 @@
             line-height: 72px;
             margin-bottom: -60px;
         }
+        @media (min-width: $break_xl) {
+            font-weight: 500;
+            font-size: 36px;
+            margin-bottom: -33px;
+        }
     }
 
     &__circle {

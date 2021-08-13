@@ -34,7 +34,7 @@ block variables
         cryptocurrenciesList = ["Cryptocurrencies", "Exchange rate", "DeFi services", "Investments decisions"];
         solutionContent = [["DeFi staking", "Staking is an activity where a user locks or holds his funds in a cryptocurrency wallet to participate in maintaining the operations of a proof-of-stake (PoS)-based blockchain system. It is similar to crypto mining because it helps a network achieve consensus while rewarding users who participate.", "liquid-swap", "liquid-swap@x2", "360", "493"], ["Liquid swap", "Liquid Swap is a feature that facilitates the simple exchanging of digital assets and cryptocurrencies. Trade without having to navigate complex trading dashboards. You can select the currency you'd like to buy and the currency you'd like to pay with. Enter the amount and complete the transaction.", "defi-staking", "defi-staking@x2", "360", "493"], ["Exchange", "A decentralized exchange (DEX, decentralized exchange) is an exchange that operates based on a distributed registry, does not store funds and personal data of users on its servers, and acts only as a platform for finding matches on applications for the purchase or sale of users' assets.", "dex", "dex@x2", "627", "423"], ["Web3 wallet", "Inka is an application based on a Web3 technology that uses decentralized protocols for all aspects of its operation. Secure and protected environment is easy accessable with a seed phrase. Create a new wallet or import existing one from any other Web3 wallets.", "crypto-founds", "crypto-founds@x2", "627", "423"]]
         sliderSlides = [["Inka wallet", "Wallet security is based on international standards. The code can be checked by anybody."], ["One click", "Everything is in the InKA app. No more switching to third-party apps. All DeFi services and cryptocurrencies are available in InKA."], ["Digital assets", "Sending digital assets in a chat. Send messages and cryptocurrency to any user directly in the chat."]]
-        socialIconsName = [["telegram"], ["fb"], ["twitter", "https://twitter.com/FinanceInka?s=09"], ["medium", "https://inkafinance-info.medium.com/"]]
+        socialIconsName = [["telegram"], ["fb"], ["twitter", "https://twitter.com/FinanceInka?s=09"], ["medium", "https://inkafinance-info.medium.com/"], ["github"]]
         inputs = [["Enter your name", "text", "username"], ["Enter your e-mail", "email", "email"]]
         marqueFirst = ["curve", "solrise", "aave", "uniswap", "polkadex", "pancakeSwap", "set", "compound", "balancer"]
         marqueSecond = ["equilibrium", "centrifuge", "venus", "linch", "stellarTerm", "bakeryswap", "raydium", "mantradao", "polkaswap"]
@@ -90,7 +90,7 @@ block content
             heading: "Roadmap",
             levels: roadmap,
         })
-        +offer({heading: "Coming soon on"})
+        +offer({heading: "Coming soon"})
         +count({
             countList: countList,
         })
@@ -103,6 +103,8 @@ block content
         +copyright({
             elem: "footer__copyright",
         })
+        +e.reg
+            +e.P.reg-content INKA Finance Ltd registered in England and Wales with company number 13562357
     .social-popup(style="background-color: white; color: #3A3A3A; padding: 5px; position: absolute" role="tooltip") comming soon
 
 block scripts

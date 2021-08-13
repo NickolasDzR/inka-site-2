@@ -2,7 +2,8 @@
 
     position: relative;
     @media (min-width: $break_xl) {
-        padding-top: 100px;
+        padding-top: 28px;
+        padding-bottom: 74px;
     }
     @media (min-width: $break_md) {
         padding-bottom: 70px;
@@ -13,6 +14,7 @@
     @media (min-width: $break_lg) {
         padding-bottom: 80px;
     }
+
     &__heading {
         font-weight: 500;
         font-size: 24px;
@@ -29,6 +31,12 @@
             width: auto;
 
             margin: auto 15px;
+        }
+        @media (min-width: $break_xl) {
+            margin-left: 45px;
+            margin-right: 57px;
+            letter-spacing: -1.4px;
+            font-size: 39px;
         }
     }
 
@@ -47,7 +55,8 @@
         left: 50%;
         transform: translate(-50%);
         @media (min-width: $break_xl) {
-            top: -176px;
+            top: -162px;
+            right: 40px;
             width: 312px;
         }
         @media (min-width: $break_md) {
@@ -80,6 +89,9 @@
         @media (min-width: $break_md) {
             padding: 70px 0;
         }
+        @media (min-width: $break_xl) {
+            padding: 71px 0 56px;
+        }
     }
 
     &__content {
@@ -109,6 +121,7 @@
         @media (min-width: $break_sm) {
             margin: 0;
         }
+
         & + & {
             @media (min-width: $break_sm) {
                 margin-top: 15px;
@@ -116,6 +129,9 @@
             @media (min-width: $break_lg) {
                 margin-top: 0;
                 margin-left: 15px;
+            }
+            @media (min-width: $break_xl) {
+                margin-left: 47px;
             }
         }
     }

@@ -335,6 +335,19 @@ strong {
             display: none;
         }
     }
+
+    &__reg {
+        width: 460px;
+        max-width: 320px;
+        margin: 0 auto;
+        color: white;
+        margin-top: 20px;
+        text-align: center;
+        @media (min-width: $break_md) {
+            max-width: none;
+            line-height: 22px;
+        }
+    }
 }
 
 .glide {
@@ -386,6 +399,8 @@ strong {
     justify-content: center;
     align-items: center;
     @media (min-width: $break_md) {
+        width: 20px;
+        height: 20px;
         & + & {
             margin-left: 28px;
         }

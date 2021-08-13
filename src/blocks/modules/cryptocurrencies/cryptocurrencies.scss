@@ -71,6 +71,9 @@
         height: 273px;
         margin: 0 auto;
         overflow: hidden;
+        @media (min-width: $break_sm) {
+            overflow: visible;
+        }
         @media (min-width: $break_lg) {
             width: 475px;
             height: 475px;

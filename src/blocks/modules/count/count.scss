@@ -172,5 +172,9 @@
             margin-left: 15px;
             br { display: none; }
         }
+        @media (min-width: $break_xl) {
+            margin-bottom: 31px;
+            font-size: 25px;
+        }
     }
 }
