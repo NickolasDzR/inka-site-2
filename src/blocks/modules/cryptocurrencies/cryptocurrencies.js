@@ -7,21 +7,21 @@ const circle = document.querySelector(".cryptocurrencies__circle-inner"),
 const runningAnimation = () => {
     smallCircles.forEach((el, index) => {
         const realIndex = index + 1;
-        const activationAnimationClass = `cryptocurrencies__item-img_${realIndex}_transform`;
-        setInterval(() => {
-            if (!el.classList.contains(activationAnimationClass)) {
-                el.classList.add(activationAnimationClass);
-                cryptocurrenciesCircleInner.classList.add("cryptocurrencies__circle-inner_scale")
-            }
-        }, cryptoAnimationInitBy * 1000 * 2);
+        // const activationAnimationClass = `cryptocurrencies__item-img_${realIndex}_transform`;
+        // setInterval(() => {
+        //     if (!el.classList.contains(activationAnimationClass)) {
+        //         el.classList.add(activationAnimationClass);
+        //         cryptocurrenciesCircleInner.classList.add("cryptocurrencies__circle-inner_scale")
+        //     }
+        // }, cryptoAnimationInitBy * 1000 * 2);
         setTimeout(function () {
             setInterval(() => {
                 if (el.classList.contains(activationAnimationClass)) {
                     el.classList.remove(activationAnimationClass);
                     cryptocurrenciesCircleInner.classList.remove("cryptocurrencies__circle-inner_scale")
                 }
-            }, cryptoAnimationInitBy * 1000 * 2);
-        }, cryptoAnimationInitBy * 1000);
+            }, 4000);
+        }, 2000);
     })
 }
 

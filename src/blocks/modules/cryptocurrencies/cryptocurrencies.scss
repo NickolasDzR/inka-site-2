@@ -119,6 +119,7 @@
         box-shadow: -5px -5px 20px #ffffff, 5px 5px 20px rgba(0, 0, 0, 0.1);
         border-radius: 50%;
         cursor: pointer;
+        //animation: circleScale .3s ease infinite;
         @media (min-width: $break_lg) {
             width: 188px;
             height: 188px;
@@ -128,6 +129,15 @@
             transform: scale(1.15);
         }
     }
+    //
+    //@keyframes circleScale {
+    //    75% {
+    //        transform: scale(1);
+    //    }
+    //    100% {
+    //        transform: scale(1.15);
+    //    }
+    //}
 
     &__circle-cover {
         display: flex;
