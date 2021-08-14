@@ -9,10 +9,12 @@ const runningAnimation = () => {
         const realIndex = index + 1;
         const activationAnimationClass = `cryptocurrencies__item-img_${realIndex}_transform`;
         setInterval(() => {
+            el.classList.add(activationAnimationClass);
             cryptocurrenciesCircleInner.classList.add("cryptocurrencies__circle-inner_scale")
         }, cryptoAnimationInitBy * 1000 * 2);
         setTimeout(function () {
             setInterval(() => {
+                el.classList.remove(activationAnimationClass);
                 cryptocurrenciesCircleInner.classList.remove("cryptocurrencies__circle-inner_scale")
             }, 4000);
         }, 2000);
