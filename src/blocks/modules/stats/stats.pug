@@ -7,8 +7,9 @@ mixin stats(value = false)
                     +b.pouf-wrp
                         +b.IMG.pouf._medium(src="img/content/pouf-medium.webp")
                     +e.IMG.backdrop-mirror(src="img/content/mirror-circle.webp" width="36" height="36")
-                    +e.IMG.backdrop-mirror._top(src="img/content/mirror-circle.webp" width="36" height="36")
-                    +e.IMG.backdrop-mirror._top._shadow(src="img/content/mirror-circle-shadow.webp" width="36" height="36")
+                    //+e.IMG.backdrop-mirror._top(src="img/content/mirror-circle.webp" width="36" height="36")
+                    //+e.IMG.backdrop-mirror._top._shadow(src="img/content/mirror-circle-shadow.webp" width="36" height="36")
+                    +e.IMG.backdrop-mirror._top._shadow(src="img/content/mirror-circle-mob.webp" srcset="img/content/mirror-circle-desk.webp 2x" media="(max-width: 576px)" width="36" height="36")
                     //+e.IMG.blur-image(src="img/content/blur-image.webp")
                     +e.content
                         +e.UL.list

@@ -18,7 +18,9 @@
             bottom: -40px;
             left: -30px;
             @media (min-width: $break_sm) {
-                bottom: -70px;
+                width: 143px;
+                height: 143px;
+                bottom: -88px;
                 left: 100px;
             }
         }
@@ -26,8 +28,10 @@
             top: 30%;
             right: -30px;
             @media (min-width: $break_sm) {
-                top: -7%;
+                top: -13%;
                 right: 10px;
+                width: 113px;
+                height: 113px;
             }
         }
     }
@@ -204,33 +208,33 @@
         left: 47px;
         z-index: 5;
         @media (min-width: $break_sm) {
+            width: 56px;
+            height: 56px;
             bottom: -20px;
-            left: 173px;
-            transform: rotate(-10deg);
+            left: 215px;
         }
         &_top {
             left: auto;
             bottom: auto;
-            top: 168px;
             right: -9px;
-            transform: rotate(-93deg);
+            top: 155px;
+            right: -9px;
             @media (min-width: $break_sm) {
-                display: none;
                 left: auto;
             }
         }
         &_shadow {
-            display: none;
-            top: -45px;
-            right: 85px;
-            left: auto;
-            bottom: auto;
-            transform: rotate(0deg);
             @media (min-width: $break_sm) {
+                left: auto;
+                transform: rotate(0deg);
                 display: block;
-                right: 70px;
+                right: 77px;
                 bottom: auto;
-                top: -40px;
+                top: -61px;
+            }
+            @media (min-width: $break_md) {
+                width: 56px;
+                height: 56px;
             }
         }
     }
