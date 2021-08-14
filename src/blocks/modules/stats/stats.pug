@@ -4,6 +4,8 @@ mixin stats(value = false)
             .row
                 +e.H2.heading #{value.heading}
                 +e.content-wrp
+                    +b.pouf-wrp
+                        +b.IMG.pouf._medium(src="img/content/pouf-medium.webp")
                     +e.IMG.backdrop-mirror(src="img/content/mirror-circle.webp" width="36" height="36")
                     +e.IMG.backdrop-mirror._top(src="img/content/mirror-circle.webp" width="36" height="36")
                     +e.IMG.backdrop-mirror._top._shadow(src="img/content/mirror-circle-shadow.webp" width="36" height="36")

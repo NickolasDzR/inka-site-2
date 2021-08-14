@@ -20,6 +20,7 @@
     "@glidejs/glide": "^3.4.1",
     "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker",
     "@popperjs/core": "^2.9.3",
+    "alpine-magic-helpers": "^1.2.2",
     "autoprefixer": "^10.3.1",
     "bemto.pug": "^2.1.0",
     "browser-sync": "^2.27.5",

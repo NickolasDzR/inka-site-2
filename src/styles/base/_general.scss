@@ -10,6 +10,7 @@ html {
 }
 
 body {
+    position: relative;
     min-width: 100%;
     background-color: #fff;
     max-width: 100%;
@@ -282,6 +283,17 @@ strong {
     }
 }
 
+.main {
+    &__title-wrp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media (min-width: $break_md) {
+            display: block;
+        }
+    }
+}
+
 .footer {
     padding: 35px 0 45px;
     background-color: $font-black;
@@ -404,9 +416,11 @@ strong {
             margin-left: 28px;
         }
     }
+
     &:hover::before {
         background-color: $blue;
     }
+
     &::before {
         content: "";
         background-color: $gray;
@@ -416,13 +430,15 @@ strong {
         border-radius: 50%;
         transition: background-color .2s linear;
         @media (min-width: $break_md) {
-            width:  16px;
+            width: 16px;
             height: 16px;
         }
     }
+
     &.glide__bullet--active::before {
         background-color: $blue;
     }
+
     &_black {
         &:hover:before {
             @media (min-width: $break_sm) {
@@ -430,6 +446,7 @@ strong {
             }
             background-color: $blue;
         }
+
         &.glide__bullet--active:before {
             @media (min-width: $break_sm) {
                 background-color: #585858;
@@ -437,4 +454,98 @@ strong {
             background-color: $blue;
         }
     }
+}
+
+.pouf {
+    position: absolute;
+    &_big {
+        width: 92px;
+        height: 92px;
+        top: 50px;
+        right: -50px;
+        @media (min-width: $break_sm) {
+            right: -100px;
+        }
+        @media (min-width: $break_md) {
+            top: 30px;
+            right: -190px;
+        }
+        @media (min-width: $break_lg) {
+            width: 237px;
+            height: 227px;
+            top: -240px;
+            right: -500px;
+        }
+        @media (min-width: $break_xl) {
+            top: -320px;
+            right: -930px;
+        }
+    }
+    &_medium {
+        width: 89px;
+        height: 90px;
+
+        top: -40px;
+        left: -50px;
+
+        z-index: 1;
+        @media (min-width: $break_sm) {
+            width: 119px;
+            height: 120px;
+            top: -70px;
+            left: -60px;
+        }
+        @media (min-width: $break_lg) {
+            top: -84px;
+            left: -80px;
+
+            width: 153px;
+            height: 153px;
+        }
+        @media (min-width: $break_xl) {
+            top: -154px;
+            left: -140px;
+
+            width: 243px;
+            height: 243px;
+        }
+    }
+    &_small {
+        width: 25px;
+        height: 25px;
+
+        top: 200px;
+        left: 30px;
+        @media (min-width: $break_sm) {
+            top: 120px;
+            left: 30px;
+        }
+
+        @media (min-width: $break_md) {
+            top: -70px;
+            left: -90px;
+
+            width: 45px;
+            height: 45px;
+
+        }
+
+        @media (min-width: $break_lg) {
+            top: -110px;
+            left: -30px;
+
+            width: 62px;
+            height: 62px;
+        }
+        @media (min-width: $break_xl) {
+            width: 102px;
+            height: 102px;
+            top: -180px;
+            left: -120px;
+        }
+    }
+}
+
+.pouf-wrp {
+    position: relative;
 }

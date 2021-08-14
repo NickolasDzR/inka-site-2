@@ -1,0 +1,35 @@
+.app-btn {
+    width: 152px;
+    height: 44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 19px;
+
+    border: 1px solid $blue;
+    border-radius: 6px;
+
+    cursor: pointer;
+    transition: background .3s ease, box-shadow .150s ease;
+    @media (min-width: $break_sm) {
+        width: 193px;
+        height: 56px;
+    }
+    &:hover {
+        box-shadow: 0px 0px 24px #7171FF;
+        background: radial-gradient(97.22% 1164.94% at 2.78% 96.15%, #6C50D9 0%, #C9A0F4 100%);
+        border-color: transparent;
+        border-width: 0;
+        padding: 20px;
+        svg {
+            fill: $white;
+        }
+    }
+    svg {
+        width: 100%;
+        height: auto;
+        fill: $blue;
+        transition: fill .3s linear;
+    }
+}

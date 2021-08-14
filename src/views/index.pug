@@ -3,6 +3,7 @@ include helpers/mixins
 include ../blocks/components/hamburger/hamburger
 include ../blocks/modules/nav/nav
 include ../blocks/modules/title/title
+include ../blocks/components/app-btn/app-btn
 include ../blocks/modules/stats/stats
 include ../blocks/modules/count/count
 include ../blocks/modules/steps/steps
@@ -56,10 +57,11 @@ block content
                     navigationListItems: navigationItems,
                 })
     +b.MAIN.main
-        +title({
-            heading: "We simplify crypto for you.",
-            text: "The most friendly DeFi wallet and aggregator.<br>  Earn, deposit, borrow and swap cryptocurrencies in a tap."
-        })
+        +e.title-wrp
+            +title({
+                heading: "We simplify crypto for you.",
+                text: "The most friendly DeFi wallet and aggregator.<br>  Earn, deposit, borrow and swap cryptocurrencies in a tap."
+            })
         +stats({
             content: statsList,
             heading: "Easy access to",

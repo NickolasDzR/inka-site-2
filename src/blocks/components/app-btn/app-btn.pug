@@ -1,0 +1,6 @@
+mixin appBtn(value = false)
+    +b.app-btn(class=value.class)
+        +icon({
+            name: value.iconName,
+            viewbox: value.viewbox,
+        })

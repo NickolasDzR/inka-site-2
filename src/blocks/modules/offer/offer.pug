@@ -6,19 +6,9 @@ mixin offer(value = false)
                     +e.H2.heading #{value.heading}
                     +e.UL.content
                         +e.LI.item
-                            +picture({
-                                sm: true,
-                                name: "app-store",
-                                format: "png",
-                                class: "app-store-img"
-                            })
+                            +appBtn({iconName: "appstore", class: "offer__store", viewbox: "0 0 158 37"})
                         +e.LI.item
-                            +picture({
-                                sm: true,
-                                name: "google-play",
-                                format: "png",
-                                class: "app-store-img"
-                            })
+                            +appBtn({iconName: "googleplay", class: "offer__store", viewbox: "0 0 167 36"})
                     +picture({
                         sm: true,
                         name: "iphone",

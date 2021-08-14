@@ -40,16 +40,19 @@
         padding: 0;
         z-index: 1;
         @media (min-width: $break_md) {
-            max-width: 670px;
-            top: 0;
-            right: -310px;
+            max-width: 700px;
+            top: -300px;
+            right: -340px;
             bottom: auto;
         }
         @media (min-width: $break_lg) {
-            right: -130px;
+            right: -120px;
+            top: -250px;
         }
         @media (min-width: $break_xl) {
-            right: 0;
+            right: -80px;
+            top: -380px;
+            max-width: none;
         }
     }
     &__list {
