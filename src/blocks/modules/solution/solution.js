@@ -65,7 +65,7 @@ const getCoordinateOfElement = (position) => {
         if (viewportWidth > 992 && viewportWidth < 1280) {
             return position === "top" ? lgImageHeightFirst : lgImageHeightLast;
         }
-        if (viewportWidth > 1280) {
+        if (viewportWidth >= 1280) {
             return position === "top" ? xlImageHeightFirst : xlImageHeightLast;
         }
     };
