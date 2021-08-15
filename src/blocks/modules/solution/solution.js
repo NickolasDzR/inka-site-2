@@ -80,7 +80,6 @@ const scrollTriggerSettings = {
     onUpdate: getCurrentSection,
     invalidateOnRefresh: true,
     pin: ".solution__fixed",
-    markers: true,
 }
 
 let animationFixes = undefined;
@@ -89,6 +88,7 @@ const solutionScrollTrigger = ScrollTrigger.create({
     trigger: ".solution",
     start: "top bottom",
     end: "bottom top",
+    markers: true,
     onEnter: () => {
         gsap.set(contentMarkers[0], {autoAlpha: 1});
     },
@@ -100,7 +100,7 @@ const solutionScrollTrigger = ScrollTrigger.create({
 contentMarkserBlock.forEach((marker, index) => {
     marker.content = contentMarkers[index];
 
-    if (index !== 0) gsap.set(marker.content, {autoAlpha: 0});
+   gsap.set(marker.content, {autoAlpha: 0})
 
     marker.content.enter = function () {
         gsap.fromTo(marker.content, {autoAlpha: 0}, {duration: 0.3, autoAlpha: 1});
@@ -186,12 +186,14 @@ contentMarkserBlock.forEach((elem, index) => {
 let activeSlideIndexSolution = 0;
 let solutionSlider = document.querySelector(".solution__slider");
 
-const solutionSliderInit = new Glide('.solution__slider', {
+const slideConfig = {
     startAt: activeSlideIndexSolution,
     // autoplay: 2000,
     type: 'carousel',
     perView: 1,
-})
+}
+
+let solutionSliderInit = undefined;
 
 const solutionSliderAnimationHeightHandler = () => {
     if (!solutionSlider) return false;
@@ -204,13 +206,13 @@ const solutionSliderAnimationHeightHandler = () => {
     }
 }
 
-solutionSliderInit.on(['build.after', 'run.after'], solutionSliderAnimationHeightHandler);
-
 let sliderIsInited = false;
 
 const onResizeHandler = () => {
     if (window.matchMedia("(min-width: 576px)").matches) {
-        animationFixes.refresh();
+        if (animationFixes) {
+            animationFixes.refresh();
+        }
 
         if (sliderIsInited === true) {
             solutionSliderInit.destroy();
@@ -219,7 +221,8 @@ const onResizeHandler = () => {
         }
     } else {
         if (sliderIsInited === false) {
-            solutionSliderInit.mount();
+            solutionSliderInit = new Glide('.solution__slider', slideConfig).mount();
+            solutionSliderInit.on(['build.after', 'run.after'], solutionSliderAnimationHeightHandler)
             sliderIsInited = true;
         }
     }
