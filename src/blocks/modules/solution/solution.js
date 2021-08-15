@@ -50,23 +50,22 @@ const getCoordinateOfElement = (position) => {
     const mdImageHeightLast = 229;
 
     const lgImageHeightFirst = 396;
-    const lgImageHeightLast = 316;
+    const lgImageHeightLast = 300;
 
-    const xlImageHeightFirst = 491;
-    const xlImageHeightLast = 417;
+    const xxlImageHeightFirst = 491;
+    const xxlImageHeightLast = 417;
 
     const getCorrectImageHeight = () => {
-        if (viewportWidth > 576 && viewportWidth < 767) {
+        if (viewportWidth >= 576 && viewportWidth <= 768) {
             return position === "top" ? smImageHeightFirst : smImageHeightLast;
-        }
-        if (viewportWidth > 767 && viewportWidth < 992) {
+        } else if (viewportWidth > 768 && viewportWidth <= 992) {
             return position === "top" ? mdImageHeightFirst : mdImageHeightLast;
-        }
-        if (viewportWidth > 992 && viewportWidth < 1280) {
+        } else if (viewportWidth > 992 && viewportWidth <= 1440) {
             return position === "top" ? lgImageHeightFirst : lgImageHeightLast;
-        }
-        if (viewportWidth >= 1280) {
-            return position === "top" ? xlImageHeightFirst : xlImageHeightLast;
+        } else if (viewportWidth > 1440) {
+            return position === "top" ? xxlImageHeightFirst : xxlImageHeightLast;
+        } else {
+            console.error("Inka error: None of the breakpoints is fit to the breakpoints")
         }
     };
 

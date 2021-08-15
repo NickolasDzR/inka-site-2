@@ -31,7 +31,7 @@ body {
     @include sm(max-width, $break_xl);
     @include md(max-width, $break_md);
     @include lg(max-width, $break_lg);
-    @include xl(max-width, $break_xl);
+    @include xxl(max-width, $break_xxl);
 }
 
 .row {

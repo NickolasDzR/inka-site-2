@@ -8,6 +8,7 @@ $break_sm: 576px;
 $break_md: 767px;
 $break_lg: 992px;
 $break_xl: 1280px;
+$break_xxl: 1440px;
 
 $offset: 30px;
 $offset_xs: $offset;
@@ -357,6 +358,12 @@ $fields: 15px;
     }
 }
 
+@mixin xxl($name, $value){
+    @media screen and (min-width: $break_xxl){
+        #{$name}: $value;
+    }
+}
+
 @mixin xl-block(){
     @media screen and (min-width: $break_xl){
         @content;
@@ -452,15 +459,15 @@ $fields: 15px;
     height: 100vh;
     position: fixed;
     width: 100%;
-    
+
     > div{
         height: inherit;
         @include container();
-        
+
         > div{
             height: inherit;
             @include row-flex();
-            
+
             > div{
                 @include col();
                 @include size(1);
