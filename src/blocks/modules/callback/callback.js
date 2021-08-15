@@ -62,12 +62,49 @@ const messageHandler = (message, type) => {
 btn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const inputs = e.target.closest("form").querySelectorAll("input");
-    let inputsData = {};
+    if (validateHandler() === false) {
+        return false;
+    } else {
 
-    inputs.forEach((el, index) => {
-        inputsData[inputs[index].dataset.type] = inputs[index].value;
-    });
+        const inputs = e.target.closest("form").querySelectorAll("input");
+        let inputsData = {};
 
-    return sendData(inputsData);
+        inputs.forEach((el, index) => {
+            inputsData[inputs[index].dataset.type] = inputs[index].value;
+        });
+
+        return sendData(inputsData);
+    }
 });
+
+const callbackBtn = document.querySelector(".callback__btn");
+const inputsForm = document.querySelectorAll(".input .input__input");
+
+const validateHandler = () => {
+    let inputLength = null;
+    inputsForm.forEach((elem, i) => {
+        if (elem.value.length > 0) {
+            inputLength = true
+        } else {
+            inputLength = false;
+        }
+    });
+    return inputLength;
+}
+
+// callbackBtn.addEventListener("click", (e) => {
+//     if (validateHandler() === false) {
+//         console.log(false);
+//         e.preventDefault();
+//         e.stopPropagation();
+//         e.stopImmediatePropagation();
+//
+//         console.log(e);
+//         return false;
+//     }
+//
+//     console.log(true);
+//     // if (validateHandler() === false) {
+//     //     e.preventDefault();
+//     // }
+// })
