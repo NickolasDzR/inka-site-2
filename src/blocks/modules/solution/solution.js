@@ -88,7 +88,6 @@ const solutionScrollTrigger = ScrollTrigger.create({
     trigger: ".solution",
     start: "top bottom",
     end: "bottom top",
-    markers: true,
     onEnter: () => {
         gsap.set(contentMarkers[0], {autoAlpha: 1});
     },
@@ -188,7 +187,7 @@ let solutionSlider = document.querySelector(".solution__slider");
 
 const slideConfig = {
     startAt: activeSlideIndexSolution,
-    // autoplay: 2000,
+    autoplay: 2000,
     type: 'carousel',
     perView: 1,
 }
