@@ -28,8 +28,10 @@ body {
 
 .container-fix {
     @include container();
-    @include md(max-width, $break_lg);
-    @include lg(max-width, $break_xl);
+    @include sm(max-width, $break_xl);
+    @include md(max-width, $break_md);
+    @include lg(max-width, $break_lg);
+    @include xl(max-width, $break_xl);
 }
 
 .row {
@@ -327,7 +329,7 @@ strong {
 
     &__copyright {
         @media (min-width: $break_md) {
-            width: 460px;
+            width: 330px;
             flex-wrap: nowrap;
             margin-left: auto;
             margin-right: auto;
@@ -358,6 +360,9 @@ strong {
             max-width: none;
             line-height: 22px;
         }
+    }
+    &__reg-content {
+        font-size: 9px;
     }
 }
 
@@ -414,6 +419,9 @@ strong {
         height: 20px;
         & + & {
             margin-left: 28px;
+            @media (min-width: $break_xl) {
+                margin-left: 38px;
+            }
         }
     }
 

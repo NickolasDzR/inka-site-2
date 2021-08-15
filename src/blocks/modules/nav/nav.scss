@@ -116,7 +116,7 @@ $staticNavigationMediaBreak: $break_md;
     &__link {
         display: inline-block;
         width: 100%;
-        padding: 16px 16px;
+        padding: 21px 18px;
         transform: translateZ(-30px);
         transition: transform 700ms ease, color .2s linear;
         font-size: 18px;
@@ -183,9 +183,11 @@ $staticNavigationMediaBreak: $break_md;
     }
 
     &__copypright {
+        font-family: "Roboto";
         font-weight: normal;
         font-size: 16px;
         line-height: 150%;
+        color: $font-black;
         opacity: 0;
         transition: opacity .1s linear;
 

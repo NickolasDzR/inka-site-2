@@ -79,9 +79,6 @@
 
     &__slider {
         width: 100%;
-        @media(min-width: $break_lg) {
-            width: 496px;
-        }
         @media (min-width: $break_sm) {
             width: 270px;
             display: flex;
@@ -89,6 +86,12 @@
         }
         @media (min-width: $break_md) {
             width: 370px;
+        }
+        @media(min-width: $break_lg) {
+            width: 496px;
+        }
+        @media (min-width: $break_xl) {
+            width: 600px;
         }
     }
 
@@ -118,12 +121,13 @@
             line-height: 22px;
         }
         @media (min-width: $break_lg) {
-            font-size: 24px;
+            font-size: 22px;
             line-height: 36px;
-            margin-bottom: 35px;
+            margin-bottom: 55px;
         }
         @media (min-width: $break_xl) {
-            margin-bottom: 45px;
+            font-size: 24px;
+            margin-bottom: 65px;
         }
     }
 
@@ -161,7 +165,7 @@
             flex-grow: 1;
         }
         @media (min-width: $break_lg) {
-            width: calc(100% - 556px);
+            width: calc(100% - 660px);
         }
     }
 

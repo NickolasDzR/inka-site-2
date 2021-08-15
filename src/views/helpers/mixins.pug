@@ -47,9 +47,21 @@ mixin picture(value = false)
                 media="(min-width: 576px)"
                 type="image/webp"
             )
-        +e.IMG(class=imgClass class=imgModificator
-            srcset=`img/content/${value.name}@x2.webp 2x`
-            src=`img/content/${value.name}.webp`
-            alt=value.alt
-            data=value.data
-        )
+        if value.format
+            +e.IMG(class=imgClass class=imgModificator
+                srcset=`img/content/${value.name}@x2.webp 2x,
+                img/content/${value.name}.${value.format},
+                img/content/${value.name}@2.${value.format} x2`
+                src=`img/content/${value.name}.webp`
+                alt=value.alt
+                data=value.data
+                style=value.style
+            )
+        else
+            +e.IMG(class=imgClass class=imgModificator
+                srcset=`img/content/${value.name}@x2.webp 2x`
+                src=`img/content/${value.name}.webp`
+                alt=value.alt
+                data=value.data
+            )
+

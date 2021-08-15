@@ -7,7 +7,7 @@ mixin social(value = false)
             each val, i in value.iconsName
                 if i === 4
                     +e.LI.item(class="_github")
-                        +e.A.link(target="_black")
+                        +e.A.link(target="_black" href=val[1])
                             +icon({
                                 name: val[0],
                                 class: "soc__svg",

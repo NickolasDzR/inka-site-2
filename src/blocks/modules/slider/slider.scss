@@ -69,7 +69,7 @@
         @include size(12);
         @media (min-width: $break_xl) {
             width: calc(100% - 456px);
-            max-width: 600px;
+            max-width: 580px;
         }
         @media (min-width: $break_sm) {
             //    display: flex;
@@ -91,6 +91,9 @@
 
     &__slides-wrp {
         margin-bottom: 30px;
+        @media (min-width: $break_xl) {
+            margin-bottom: 71px;
+        }
     }
 
     &__title {
@@ -101,7 +104,7 @@
         color: $font-black;
         margin-bottom: 35px;
         @media (min-width: $break_xl) {
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
         @media (min-width: $break_lg) {
             font-size: 48px;
@@ -372,12 +375,12 @@
         font-size: 18px;
         line-height: 36px;
         margin-bottom: 14px;
-        @media (min-width: $break_xl) {
-            margin-bottom: 56px;
-        }
         @media (min-width: $break_lg) {
             font-size: 24px;
             margin-bottom: 36px;
+        }
+        @media (min-width: $break_xl) {
+            margin-bottom: 47px;
         }
     }
 

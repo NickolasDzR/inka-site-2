@@ -15,6 +15,9 @@
         @media (min-width: $break_md) {
             padding: 60px 0;
         }
+        @media (min-width: $break_xl) {
+            padding: 71px 0 56px
+        }
     }
     //&__background-img {
     //    position: absolute;
@@ -50,8 +53,8 @@
             top: -250px;
         }
         @media (min-width: $break_xl) {
-            right: -80px;
-            top: -380px;
+            right: -100px;
+            top: -384px;
             max-width: none;
         }
     }
@@ -161,6 +164,10 @@
             text-align: left;
             margin-left: 15px;
         }
+        @media (min-width: $break_xl) {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
     }
     &__subheading {
         font-family: "Roboto";
@@ -176,8 +183,8 @@
             br { display: none; }
         }
         @media (min-width: $break_xl) {
-            margin-bottom: 31px;
-            font-size: 25px;
+            margin-bottom: 30px;
+            font-size: 24px;
         }
     }
 }

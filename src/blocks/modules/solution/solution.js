@@ -80,6 +80,7 @@ const scrollTriggerSettings = {
     onUpdate: getCurrentSection,
     invalidateOnRefresh: true,
     pin: ".solution__fixed",
+    markers: true,
 }
 
 let animationFixes = undefined;

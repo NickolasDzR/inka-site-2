@@ -20,10 +20,10 @@ async function sendData(formData) {
 
             if (code === 200 || code === 409) {
                 if (value.status === "Success!") {
-                    messageHandler(value.message, "Success!");
+                    messageHandler("You have been successfully subscribed for newsletters", "Success!");
                 }
                 if (code === 409) {
-                    messageHandler(value.errors[0].message, "error");
+                    messageHandler("You have already subscribed to the newsletters", "error");
                 }
             } else if (status === 419) {
                 alert("Пожалуйста, повторите отправку данных еще раз после перезагрузки страницы");
