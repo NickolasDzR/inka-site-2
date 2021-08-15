@@ -7,10 +7,7 @@ mixin stats(value = false)
                     +b.pouf-wrp
                         +b.IMG.pouf._medium(src="img/content/pouf-medium.webp")
                     +e.IMG.backdrop-mirror(src="img/content/mirror-circle.webp" width="36" height="36")
-                    //+e.IMG.backdrop-mirror._top(src="img/content/mirror-circle.webp" width="36" height="36")
-                    //+e.IMG.backdrop-mirror._top._shadow(src="img/content/mirror-circle-shadow.webp" width="36" height="36")
-                    +e.IMG.backdrop-mirror._top._shadow(src="img/content/mirror-circle-mob.webp" srcset="img/content/mirror-circle-desk.webp 2x" media="(max-width: 576px)" width="36" height="36")
-                    //+e.IMG.blur-image(src="img/content/blur-image.webp")
+                    +e.IMG.backdrop-mirror._top._shadow(src="img/content/mirror-circle-mob.webp" media="(max-width: 576px)" width="36" height="36")
                     +e.content
                         +e.UL.list
                             each val, index in value.content
@@ -24,5 +21,3 @@ mixin stats(value = false)
                                     +e.SVG.circle._big
                                         +e.CIRCLE.circle-progress._path(cx="105" cy="105" r="100")
                                         +e.CIRCLE.circle-progress._fill(cx="105" cy="105" r="100")
-                        //+e.IMG.backdrop-circle(src="img/content/purple-circle.webp" width="200" height="200")
-                        //+e.IMG.backdrop-circle._top(src="img/content/purple-circle.webp" width="200" height="200" filter="url(#blurCircle)")
