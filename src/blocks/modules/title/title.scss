@@ -13,9 +13,13 @@
         padding-top: 230px;
     }
     @media (min-width: $break_xl) {
-        padding-top: 185px;
+        padding-top: 135px;
         padding-bottom: 120px;
     }
+    @media (min-width: $break_xxl) {
+        padding-top: 185px;
+    }
+
     &__content {
         @include col();
         @include size(12);
@@ -29,6 +33,9 @@
             margin-bottom: 40px;
         }
         @media (min-width: $break_xl) {
+            width: 549px;
+        }
+        @media (min-width: $break_xxl) {
             width: 600px;
         }
     }
@@ -66,13 +73,14 @@
             min-width: 510px;
         }
         @media (min-width: $break_xl) {
-            width: 813px;
-            left: -188px;
+            width: 693px;
+            left: -108px;
             top: 26px;
         }
 
         @media (min-width: 1440px) {
             width: 883px;
+            left: -211px;
         }
     }
 
@@ -89,6 +97,7 @@
         }
         @media (min-width: $break_xl) {
             width: calc(100% - 630px);
+            max-width: 580px;
             margin-bottom: 30px;
         }
     }
@@ -113,6 +122,10 @@
             margin-bottom: 24px;
         }
         @media (min-width: $break_xl) {
+            font-size: 44px;
+            margin-bottom: 30px;
+        }
+        @media (min-width: $break_xxl) {
             margin-bottom: 42px;
             font-size: 48px;
             line-height: 48px;
@@ -133,6 +146,11 @@
             margin-bottom: 30px;
         }
         @media (min-width: $break_xl) {
+            font-size: 22px;
+            line-height: 32px;
+            margin-bottom: 32px;
+        }
+        @media (min-width: $break_xxl) {
             font-size: 24px;
             line-height: 36px;
             margin-bottom: 50px;
@@ -145,6 +163,7 @@
             }
         }
     }
+
     &__store {
         @include col();
         @include size(12);
@@ -160,12 +179,14 @@
             }
         }
     }
+
     &__store_mob {
         display: none;
         @media (min-width: $break_lg) {
             display: block;
         }
     }
+
     &__store-text {
         width: 100%;
         text-align: center;
@@ -174,6 +195,7 @@
             font-size: 18px;
         }
     }
+
     &__store-img-wrp {
         max-width: 319px;
         font-weight: normal;

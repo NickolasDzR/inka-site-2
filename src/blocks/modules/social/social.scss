@@ -76,3 +76,11 @@
         max-height: 100%;
     }
 }
+
+.social-popup {
+    display: none;
+}
+
+.social-popup[data-show] {
+    display: block;
+}

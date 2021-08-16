@@ -398,11 +398,10 @@ strong {
     position: absolute;
     margin-bottom: 10px !important;
     border-radius: 4px;
-    display: none;
 
-    &[data-popper-placement="top"] {
-        display: block;
-    }
+    //&[data-popper-placement="top"] {
+    //    display: block;
+    //}
 }
 
 .slider__bullet {

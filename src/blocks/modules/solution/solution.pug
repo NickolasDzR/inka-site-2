@@ -12,16 +12,10 @@ mixin solution(value = false)
                                     +e.item-wrp
                                         +e.P.title #{val[0]}
                                         +e.P.text #{val[1]}
-                                    if i === 3
-                                        +picture({
-                                            name: `${val[2]}`,
-                                            class: "__slider-img"
-                                        })
-                                    else
-                                        +picture({
-                                            name: `${val[2]}`,
-                                            class: "__slider-img"
-                                        })
+                                    +picture({
+                                        name: `${val[2]}`,
+                                        class: "__slider-img"
+                                    })
                     +e.custom-bullets(class="slider__bullets glide__bullets" data-glide-el="controls[nav]")
                         each val, index in value.solutionContent
                             +e.custom-bullet(class="slider__bullet glide__bullet" data-glide-dir="=" + index + "")
@@ -31,7 +25,7 @@ mixin solution(value = false)
                             -
                                 var
                                         imageName = val[2]
-                            if i <= 1
+                            if i <= 2
                                  +picture({
                                      name: imageName,
                                      sm: true,
