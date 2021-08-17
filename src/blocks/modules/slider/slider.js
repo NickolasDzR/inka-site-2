@@ -5,22 +5,36 @@ const sliderAutoplaySpeed = parseInt(document.querySelector(".slider__slides-wrp
 let activeSlideIndex = 0;
 let inkaSlider = document.querySelector(".glide-slider");
 
-const inkaSliderInit = new Glide('.glide-slider', {
+const inkaSliderInit = new Glide(inkaSlider, {
     startAt: activeSlideIndex,
-    // autoplay: sliderAutoplaySpeed * 1000,
+    autoplay: sliderAutoplaySpeed * 1000,
     type: 'carousel',
     perView: 1,
-}).mount();
+    perSwipe: '',
+    perTouch: 1,
+    touchRatio: 0.5
+});
 
-const inkaSlideranimationHeightHandler = () => {
-    if (!inkaSlider) return false;
+const pauseSlider = () => {
+    inkaSliderInit.pause();
+    setTimeout(() => {
+        inkaSliderInit.play();
+    }, sliderAutoplaySpeed * 1000)
+};
 
-    const slideHeight = inkaSlider.querySelector(".glide__slide--active").offsetHeight;
-    const glideTrack = inkaSlider.querySelector(".glide__track").offsetHeight;
+inkaSlider.addEventListener("click", pauseSlider);
 
-    if (slideHeight !== glideTrack) {
-        inkaSlider.querySelector(".glide__track").style.height = slideHeight + "px";
-    }
-}
+inkaSliderInit.mount();
 
-inkaSliderInit.on(['build.after', 'run.after'], inkaSlideranimationHeightHandler);
+// const inkaSlideranimationHeightHandler = () => {
+//     if (!inkaSlider) return false;
+//
+//     const slideHeight = inkaSlider.querySelector(".glide__slide--active").offsetHeight;
+//     const glideTrack = inkaSlider.querySelector(".glide__track").offsetHeight;
+//
+//     if (slideHeight !== glideTrack) {
+//         inkaSlider.querySelector(".glide__track").style.height = slideHeight + "px";
+//     }
+// }
+
+// inkaSliderInit.on(['build.after', 'run.after'], inkaSlideranimationHeightHandler);

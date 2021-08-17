@@ -166,6 +166,7 @@ contentMarkserBlock.forEach((elem, index) => {
             start: "top+=30% 80%",
             end: "bottom+=40% 50%",
             scrub: true,
+
             toggleActions: "play reverse play reverse",
         }
     });
@@ -187,22 +188,23 @@ let solutionSlider = document.querySelector(".solution__slider");
 const slideConfig = {
     startAt: activeSlideIndexSolution,
     autoplay: 2000,
+    hoverpause: true,
     type: 'carousel',
     perView: 1,
 }
 
 let solutionSliderInit = undefined;
 
-const solutionSliderAnimationHeightHandler = () => {
-    if (!solutionSlider) return false;
-
-    const slideHeight = solutionSlider.querySelector(".glide__slide--active").offsetHeight;
-    const glideTrack = solutionSlider.querySelector(".glide__track").offsetHeight;
-
-    if (slideHeight !== glideTrack) {
-        solutionSlider.querySelector(".glide__track").style.height = slideHeight + "px";
-    }
-}
+// const solutionSliderAnimationHeightHandler = () => {
+//     if (!solutionSlider) return false;
+//
+//     const slideHeight = solutionSlider.querySelector(".glide__slide--active").offsetHeight;
+//     const glideTrack = solutionSlider.querySelector(".glide__track").offsetHeight;
+//
+//     if (slideHeight !== glideTrack) {
+//         solutionSlider.querySelector(".glide__track").style.height = slideHeight + "px";
+//     }
+// }
 
 let sliderIsInited = false;
 
@@ -214,17 +216,26 @@ const onResizeHandler = () => {
 
         if (sliderIsInited === true) {
             solutionSliderInit.destroy();
+            solutionSlider.removeEventListener("click", pauseSlider);
             document.querySelector(".solution__track").removeAttribute("style");
             sliderIsInited = false;
         }
     } else {
         if (sliderIsInited === false) {
-            solutionSliderInit = new Glide('.solution__slider', slideConfig).mount();
-            solutionSliderInit.on(['build.after', 'run.after'], solutionSliderAnimationHeightHandler)
+            solutionSliderInit = new Glide('.solution__slider', slideConfig);
+            solutionSlider.addEventListener("click", pauseSlider);
+            solutionSliderInit.mount();
             sliderIsInited = true;
         }
     }
 }
+
+const pauseSlider = () => {
+    solutionSliderInit.pause();
+    setTimeout(() => {
+        solutionSliderInit.play();
+    }, 2000)
+};
 
 window.addEventListener('resize', function () {
     return onResizeHandler();

@@ -5,25 +5,43 @@ const popper = document.querySelector(".social-popup");
 
 const popperSettings = {
     placement: "top",
+    modifiers: [
+        {
+            name: 'offset',
+            options: {
+                offset: [10, 10],
+            },
+        },
+    ],
 };
 
 let popperInit = undefined;
 
 const showTooltip = (el) => {
-    console.log("enter");
     popper.setAttribute("data-show", '');
 
     if (popperInit === undefined) {
         popperInit = createPopper(el.target, popper, popperSettings);
+
+        popperInit.setOptions({
+            modifiers: [{ name: 'eventListeners', enabled: true }],
+        });
+
         popperInit.update();
+
         return false
     }
 };
 
 const hideTooltip = (el) => {
     popperInit.destroy();
-    popperInit = undefined;
     popper.removeAttribute('data-show');
+
+    popperInit.setOptions({
+        modifiers: [{ name: 'eventListeners', enabled: false }],
+    });
+
+    popperInit = undefined;
 };
 
 const showEvents = ['mouseenter', 'focus'];

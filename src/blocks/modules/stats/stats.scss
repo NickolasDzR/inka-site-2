@@ -3,6 +3,7 @@
         position: relative;
         @include col();
         @include size(12);
+
         &::before, &::after {
             content: "";
             display: block;
@@ -14,6 +15,7 @@
             position: absolute;
 
         }
+
         &::before {
             bottom: -40px;
             left: -30px;
@@ -24,6 +26,7 @@
                 left: 100px;
             }
         }
+
         &::after {
             top: 30%;
             right: -30px;
@@ -35,6 +38,7 @@
             }
         }
     }
+
     &__content {
         width: 100%;
         height: 100%;
@@ -43,6 +47,33 @@
         backdrop-filter: blur(6px) saturate(160%);
         -webkit-backdrop-filter: blur(6px) saturate(160%);
         background: rgba(234, 234, 234, 0.5);
+        @media (min-width: $break_xl) {
+            background: none;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            overflow: visible;
+        }
+
+        &::after {
+            @media (min-width: $break_xl) {
+                content: "";
+                width: calc(100vw - 90px);
+                max-width: 1660px;
+                height: 370px;
+                position: absolute;
+                top: 0;
+                right: 50%;
+                bottom: 0;
+                left: 50%;
+                backdrop-filter: blur(6px) saturate(160%);
+                -webkit-backdrop-filter: blur(6px) saturate(160%);
+                background: rgba(234, 234, 234, 0.5);
+                z-index: -1;
+                transform: translateX(-50%);
+                border-radius: 16px;
+            }
+        }
+
         &::before {
             position: absolute;
             content: "";
@@ -53,6 +84,7 @@
             bottom: 0;
 
         }
+
         border-radius: 16px;
         overflow: hidden;
         @media (min-width: $break_sm) {
@@ -89,6 +121,7 @@
         @media (min-width: $break_lg) {
             display: none;
         }
+
         &-progress {
             fill: none;
             stroke-width: 6;
@@ -113,6 +146,7 @@
             }
         }
     }
+
     &__circle_big {
         display: none;
         @media (min-width: $break_lg) {
@@ -172,6 +206,7 @@
             font-weight: 300;
         }
     }
+
     &__backdrop-circle {
         width: 92px;
         height: 92px;
@@ -183,6 +218,7 @@
             left: 100px;
             bottom: -64px;
         }
+
         &_top {
             top: 188px;
             right: -28px;
@@ -195,6 +231,7 @@
             }
         }
     }
+
     &__backdrop-mirror {
         position: absolute;
         bottom: -13px;
@@ -206,6 +243,7 @@
             bottom: -20px;
             left: 215px;
         }
+
         &_top {
             left: auto;
             bottom: auto;
@@ -216,6 +254,7 @@
                 left: auto;
             }
         }
+
         &_shadow {
             @media (min-width: $break_sm) {
                 left: auto;
@@ -231,6 +270,7 @@
             }
         }
     }
+
     &__filter {
         position: absolute;
     }

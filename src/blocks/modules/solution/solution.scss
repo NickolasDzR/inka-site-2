@@ -240,6 +240,12 @@
             display: none;
         }
     }
+
+    &__image-wrp {
+        picture {
+            display: block;
+        }
+    }
 }
 
 @keyframes fadeInLeft {
