@@ -65,7 +65,9 @@ const getCoordinateOfElement = (position) => {
         } else if (viewportWidth > 1440) {
             return position === "top" ? xxlImageHeightFirst : xxlImageHeightLast;
         } else {
-            console.error("Inka error: None of the breakpoints is fit to the breakpoints")
+            if (viewportWidth >= 576) {
+                console.error("Inka error: None of the breakpoints is fit to the breakpoints")
+            }
         }
     };
 
@@ -98,7 +100,7 @@ const solutionScrollTrigger = ScrollTrigger.create({
 contentMarkserBlock.forEach((marker, index) => {
     marker.content = contentMarkers[index];
 
-   gsap.set(marker.content, {autoAlpha: 0})
+    gsap.set(marker.content, {autoAlpha: 0})
 
     marker.content.enter = function () {
         gsap.fromTo(marker.content, {autoAlpha: 0}, {duration: 0.3, autoAlpha: 1});
