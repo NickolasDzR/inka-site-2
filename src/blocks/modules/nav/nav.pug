@@ -4,6 +4,6 @@ mixin nav(value = false)
             each item, index in value.navigationListItems
                 - var anchor = "#" + item[1]
                 +e.LI.item
-                    +e.A.link(href=anchor) #{item[0]}
+                    +e.A.link(href=item[1] ? anchor : item[2] target=item[1] === false ? "_blank" : "") #{item[0]}
         +e.P.copypright   © 2021 INKA Corporation LTD
 

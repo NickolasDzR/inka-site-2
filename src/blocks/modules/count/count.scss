@@ -45,19 +45,21 @@
         max-width: 460px;
         width: 385px;
         @media (min-width: $break_md) {
-            max-width: 700px;
-            top: -300px;
-            right: -340px;
+            width: 790px;
+            max-width: 900px;
+            top: 0px;
+            right: -360px;
             bottom: auto;
         }
         @media (min-width: $break_lg) {
-            right: -120px;
-            top: -250px;
+            right: -110px;
+            top: 0px;
         }
         @media (min-width: $break_xl) {
-            right: -100px;
-            top: -384px;
+            right: 0px;
+            top: -50px;
             max-width: none;
+            width: 900px;
         }
     }
     &__list {
