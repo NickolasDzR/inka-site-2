@@ -471,24 +471,18 @@ strong {
         top: 50px;
         right: -50px;
         @media (min-width: $break_sm) {
-            right: -100px;
-        }
-        @media (min-width: $break_md) {
-            top: 30px;
-            right: -190px;
+            right: -18px;
+            top: 19px;
         }
         @media (min-width: $break_lg) {
             width: 237px;
             height: 227px;
-            top: -240px;
-            right: -500px;
-        }
-        @media (min-width: $break_xl) {
-            top: -340px;
-            right: -740px;
+            right: -48px;
+            top: 0px;
         }
     }
     &_medium {
+        display: none;
         width: 89px;
         height: 90px;
 
@@ -516,40 +510,53 @@ strong {
             width: 243px;
             height: 243px;
         }
+        @media (min-width: $break_xxl) {
+            display: block;
+            top: 797px;
+            left: -60px;
+        }
+        @media (min-width: 1760px) {
+            display: none;
+        }
     }
     &_small {
         width: 25px;
         height: 25px;
-
-        top: 200px;
-        left: 30px;
-        @media (min-width: $break_sm) {
-            top: 120px;
-            left: 30px;
-        }
-
+        top: 60px;
+        left: 0px;
         @media (min-width: $break_md) {
-            top: -70px;
-            left: -90px;
+            top: 90px;
+            left: 110px;
 
             width: 45px;
             height: 45px;
 
         }
-
         @media (min-width: $break_lg) {
-            top: -110px;
-            left: -30px;
+            top: 130px;
+            left: -10px;
 
             width: 62px;
             height: 62px;
         }
-        @media (min-width: $break_xl) {
+        @media (min-width: $break_xxl) {
             width: 102px;
             height: 102px;
-            top: -180px;
-            left: -10px;
+            top: 140px;
+            left: 110px;
         }
+    }
+}
+
+.stats .pouf_medium {
+    display: block;
+    @media (min-width: $break_xxl) {
+        display: none;
+    }
+    @media (min-width: 1760px) {
+        display: block;
+        top: -123px;
+        left: -310px;
     }
 }
 

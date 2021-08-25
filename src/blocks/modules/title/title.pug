@@ -3,10 +3,6 @@ mixin title(value = false)
         .container
             .row.title__row
                 +e.content
-                    +b.pouf-wrp
-                        +b.IMG.pouf._small(src="img/content/pouf-small.webp")
-                    +b.pouf-wrp
-                        +b.IMG.pouf._big(src="img/content/pouf-big.webp")
                     +e.H1.heading #{value.heading}
                     +e.text !{value.text}
                     +e.IMG.img-title(src=`img/content/title-mob.webp` srcset=`img/content/title-mob@x2.webp 2x` media="(min-width: 767px)" height="335" width="320")
