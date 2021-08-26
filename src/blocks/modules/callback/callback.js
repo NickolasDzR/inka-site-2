@@ -1,4 +1,4 @@
-const url = "http://inka.finance:90/api/subscribe";
+const url = "https://inka.finance:90/api/subscribe";
 
 const btn = document.querySelector(".button");
 const formError = document.querySelector(".callback__form").dataset.error;
@@ -8,7 +8,7 @@ async function sendData(formData) {
         method: "POST",
         headers: {
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(formData)
     }).then(data => {

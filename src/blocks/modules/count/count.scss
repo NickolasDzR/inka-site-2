@@ -57,9 +57,9 @@
         }
         @media (min-width: $break_xl) {
             right: 0px;
-            top: -50px;
+            top: 0;
             max-width: none;
-            width: 900px;
+            width: 800px;
         }
     }
     &__list {
