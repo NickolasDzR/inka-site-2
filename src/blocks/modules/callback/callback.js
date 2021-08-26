@@ -1,4 +1,4 @@
-const url = "https://inka.finance:90/api/subscribe";
+const url = "https://inka.finance/api/subscribe";
 
 const btn = document.querySelector(".button");
 const formError = document.querySelector(".callback__form").dataset.error;
