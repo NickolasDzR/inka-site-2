@@ -76,8 +76,8 @@ const getCoordinateOfElement = (position) => {
 
 const scrollTriggerSettings = {
     trigger: ".solution__content",
-    start: `top top+=${getCoordinateOfElement("top")}`,
-    end: `bottom bottom-=${getCoordinateOfElement("bottom")}`,
+    start: () => `top top+=${getCoordinateOfElement("top")}`,
+    end: () => `bottom bottom-=${getCoordinateOfElement("bottom")}`,
     onUpdate: getCurrentSection,
     invalidateOnRefresh: true,
     pin: ".solution__fixed",
@@ -142,7 +142,6 @@ function getCurrentSection() {
 
         lastContent = newContent;
     }
-
 }
 
 const media = window.matchMedia("screen and (max-width: 576px)");
@@ -196,17 +195,6 @@ const slideConfig = {
 }
 
 let solutionSliderInit = undefined;
-
-// const solutionSliderAnimationHeightHandler = () => {
-//     if (!solutionSlider) return false;
-//
-//     const slideHeight = solutionSlider.querySelector(".glide__slide--active").offsetHeight;
-//     const glideTrack = solutionSlider.querySelector(".glide__track").offsetHeight;
-//
-//     if (slideHeight !== glideTrack) {
-//         solutionSlider.querySelector(".glide__track").style.height = slideHeight + "px";
-//     }
-// }
 
 let sliderIsInited = false;
 
